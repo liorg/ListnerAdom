@@ -19,10 +19,16 @@ namespace rssYnet
             rss = new RssSearchKeys(); 
             rss.Listner +=rss_Listner;
         }
-
+        static object o = new object();
         private void rss_Listner(MessageItem obj)
         {
-            listBox1.Items.Add(obj.ToString());
+            lock (o)
+            {
+                listBox1.Items.Insert(0, obj.ToString());
+
+                if (obj.IsSearch) listBox1.SetItemColor(listBox1.Items.Count , Color.Red);
+            }
+            //listBox1.Items.Add(obj.ToString());
         }
         RssSearchKeys rss;
         private void btnExcute_Click(object sender, EventArgs e)

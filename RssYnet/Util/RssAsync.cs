@@ -47,30 +47,48 @@ namespace rssYnet.Util
         }
 
         public async void Excute()
-        {
-          //  var client = new HttpClient();
-            //var st = await client.GetStreamAsync(_rssUrl);
-            byte[] stream;
-            //string xmlPage = await client.GetStringAsync(_rssUrl);
-            string xmlPage;
-            using (HttpClient client = new HttpClient())
+        {  
+            string xmlPage ="";
+            using (XmlReader reader = XmlReader.Create(_rssUrl, new XmlReaderSettings() { Async = true }))
             {
-                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
-                using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
-                using (HttpContent content = response.Content)
-                {
-
-                    stream = await content.ReadAsByteArrayAsync();
-
-                    // ... Read the string.
-                    // xmlPage = await content.ReadAsStringAsync();
 
 
-                }
+              await reader.MoveToContentAsync();
+             //  await  reader.ReadAsync(); 
+
+                xmlPage = await reader.ReadOuterXmlAsync();
+           
+                
+                
+         
+
             }
-           xmlPage= System.Text.UTF8Encoding.UTF8.GetString(stream);
-            
+          ////  var client = new HttpClient();
+          //  //var st = await client.GetStreamAsync(_rssUrl);
+          //  byte[] stream;
+          //  //string xmlPage = await client.GetStringAsync(_rssUrl);
+          //  string xmlPage;
+          //  using (HttpClient client = new HttpClient())
+          //  {
+          //      client.DefaultRequestHeaders.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+          //      client.DefaultRequestHeaders.Add("Accept", "*/*");
+          //      client.DefaultRequestHeaders.Add("Accept-Language", "en-gb,en;q=0.5;");
+          //      //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+          //      client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
+          //      using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
+          //      using (HttpContent content = response.Content)
+          //      {
+
+          //         // stream = await content.ReadAsByteArrayAsync();
+
+          //          // ... Read the string.
+          //           xmlPage = await content.ReadAsStringAsync();
+
+
+          //      }
+          //  }
+          // xmlPage= System.Text.UTF8Encoding.UTF8.GetString(stream);
+
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xmlPage);
 
