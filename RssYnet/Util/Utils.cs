@@ -14,7 +14,7 @@ namespace rssYnet.Util
         {
            // List<string> keySearch = new List<string>();
             //var pattern = @"\|\| | \&\& ";
-            //var pattern = @"\+";
+            //var pattern = @"\+";  
             //    var s = "lior && dd || ttt llll || 222 x && ss || ss";
            // var data = s.Split(new[] { "&&", "||" }, StringSplitOptions.None).ToList();
             //var data = s.Split(new[] { "+"}, StringSplitOptions.None).ToList();
