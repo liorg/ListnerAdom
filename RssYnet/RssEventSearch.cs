@@ -24,9 +24,9 @@ namespace rssYnet
         {
             lock (o)
             {
-                listBox1.Items.Insert(0, obj.ToString());
+                listBox1.Items.Insert(0, obj);
 
-                if (obj.IsSearch) listBox1.SetItemColor(listBox1.Items.Count , Color.Red);
+                //if (obj.IsSearch) listBox1.SetItemColor(listBox1.Items.Count , Color.Red);
             }
             //listBox1.Items.Add(obj.ToString());
         }

@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new ImprovedListBox();
             this.txtTS = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnExcute = new System.Windows.Forms.Button();
+            this.listBox1 = new ImprovedListBox();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(221, 126);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(710, 134);
-            this.listBox1.TabIndex = 5;
             // 
             // txtTS
             // 
-            this.txtTS.Location = new System.Drawing.Point(758, 51);
+            this.txtTS.Location = new System.Drawing.Point(560, 51);
             this.txtTS.Name = "txtTS";
             this.txtTS.Size = new System.Drawing.Size(161, 20);
             this.txtTS.TabIndex = 7;
@@ -54,7 +45,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(660, 12);
+            this.txtSearch.Location = new System.Drawing.Point(462, 12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(259, 20);
             this.txtSearch.TabIndex = 6;
@@ -62,7 +53,7 @@
             // 
             // btnExcute
             // 
-            this.btnExcute.Location = new System.Drawing.Point(514, 79);
+            this.btnExcute.Location = new System.Drawing.Point(316, 79);
             this.btnExcute.Name = "btnExcute";
             this.btnExcute.Size = new System.Drawing.Size(144, 32);
             this.btnExcute.TabIndex = 8;
@@ -70,11 +61,20 @@
             this.btnExcute.UseVisualStyleBackColor = true;
             this.btnExcute.Click += new System.EventHandler(this.btnExcute_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 117);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(710, 134);
+            this.listBox1.TabIndex = 5;
+            // 
             // RssEventSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 398);
+            this.ClientSize = new System.Drawing.Size(725, 260);
             this.Controls.Add(this.btnExcute);
             this.Controls.Add(this.txtTS);
             this.Controls.Add(this.txtSearch);

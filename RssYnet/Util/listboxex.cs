@@ -1,17 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using rssYnet.Util;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 public class ImprovedListBox : ListBox
 {
     private Color highlight = SystemColors.Highlight;
-    private IDictionary<int, Color> colorList;
 
     public ImprovedListBox()
     {
         DrawMode = DrawMode.OwnerDrawFixed;
 
-        this.colorList = new Dictionary<int, Color>();
     }
 
     protected override void OnDrawItem(DrawItemEventArgs e)
@@ -40,43 +39,21 @@ public class ImprovedListBox : ListBox
             e.Graphics.FillRectangle(brush, rect);
         }
 
-        Color textColor = Color.Empty;
-        if (colorList.Count > 0)
-        {
-            if ((this.SelectionMode != SelectionMode.None) && ((e.State & DrawItemState.Selected) != DrawItemState.Selected))
-            {
-                textColor = GetItemColor(e.Index);
-
-                if (textColor.IsEmpty)
-                {
-                    textColor = base.ForeColor;
-                }
-            }
-            else
-            {
-                textColor = GetItemColor(e.Index);
-            }
-        }
 
         string text = this.Items[e.Index].ToString();
-
-        TextRenderer.DrawText(e.Graphics, text, this.Font, rect, textColor, TextFormatFlags.GlyphOverhangPadding);
-    }
-
-    public void SetItemColor(int index, Color color)
-    {
-        colorList.Add(index, color);
-    }
-
-    public Color GetItemColor(int index)
-    {
-        if (colorList.ContainsKey(index))
+        MessageItem mitem = this.Items[e.Index] as MessageItem;
+        Color foreColor = Color.Purple;
+        if (mitem != null)
         {
-            return colorList[index];
+
+            if (mitem.IsSearch)
+            {
+                foreColor = Color.Red;
+            }
+
         }
-        else
-        {
-            return base.ForeColor;
-        }
+        TextRenderer.DrawText(e.Graphics, text, this.Font, rect, foreColor, TextFormatFlags.GlyphOverhangPadding);
     }
+
+
 }
