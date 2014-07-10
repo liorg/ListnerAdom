@@ -15,7 +15,7 @@ namespace rssYnet.Util
     [Serializable]
     public struct RssItem
     {
-        public bool IsSearch;
+        
         /// <summary>
         /// The publishing date.
         /// </summary>

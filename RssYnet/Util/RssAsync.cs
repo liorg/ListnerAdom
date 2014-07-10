@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -46,9 +48,29 @@ namespace rssYnet.Util
 
         public async void Excute()
         {
-            var client = new HttpClient();
-            string xmlPage = await client.GetStringAsync(_rssUrl);
+          //  var client = new HttpClient();
+            //var st = await client.GetStreamAsync(_rssUrl);
+            byte[] stream;
+            //string xmlPage = await client.GetStringAsync(_rssUrl);
+            string xmlPage;
+            using (HttpClient client = new HttpClient())
+            {
+                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
+                using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
+                using (HttpContent content = response.Content)
+                {
 
+                    stream = await content.ReadAsByteArrayAsync();
+
+                    // ... Read the string.
+                    // xmlPage = await content.ReadAsStringAsync();
+
+
+                }
+            }
+           xmlPage= System.Text.UTF8Encoding.UTF8.GetString(stream);
+            
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xmlPage);
 
