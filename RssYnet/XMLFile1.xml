@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005">
+  <channel xmlns:cfi="http://www.microsoft.com/schemas/rss/core/2005/internal" cfi:lastdownloaderror="None">
+    <title cf:type="text">ynet - מבזקים</title>
+    <link>http://www.ynet.co.il/</link>
+    <description cf:type="text">עדכוני SMS ישירות מחדר החדשות של ynet. שילחו את המילים ''התחל חדשות'' למספר 5335 וקבלו 4 עדכוני SMS ביום. השירות בתשלום.</description>
+    <copyright cf:type="text">Ynet - news and content from Israel (Yedioth Ahronoth web site)</copyright>
+    <language>he</language>
+    <pubDate>Wed, 09 Jul 2014 16:04:10 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Jul 2014 16:04:10 GMT</lastBuildDate>
+    <atom:updated>2014-07-09T16:04:10Z</atom:updated>
+    <image>
+      <url>http://www.ynet.co.il/images/CENTRAL_logo.gif</url>  
+      <title>Ynet</title>
+      <link>http://www.ynet.co.il/home/0,7340,L-1854,00.html</link>
+    </image>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">אזעקת צבע אדום נשמעה בשדות נגב</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540585,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:57:46 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:57:46Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:57:46Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540585,00.html</guid>
+      <cfi:id>10</cfi:id>
+      <cfi:effectiveId>2882080006</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:02:26.486Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">מד"א מטפל ב-12 נפגעי חרדה אחרי הירי לגוש דן</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540583,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:55:29 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:55:29Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:55:29Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540583,00.html</guid>
+      <cfi:id>9</cfi:id>
+      <cfi:effectiveId>315289864</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">אבו מאזן: "מה שישראל עושה ברצועת עזה זה רצח עם"</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540579,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:52:32 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:52:32Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:52:32Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540579,00.html</guid>
+      <cfi:id>8</cfi:id>
+      <cfi:effectiveId>986465</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">עוד שלוש רקטות התפוצצו באשכול - אחת מהן פגעה בבית; אין נפגעים</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540574,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:47:31 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:47:31Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:47:31Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540574,00.html</guid>
+      <cfi:id>7</cfi:id>
+      <cfi:effectiveId>3991570628</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">300 מפגינים בנצרת נגד מבצע "צוק איתן"</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540572,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:44:28 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:44:28Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:44:28Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540572,00.html</guid>
+      <cfi:id>6</cfi:id>
+      <cfi:effectiveId>2358630459</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">אזעקה במועצות האזוריות בית קמה ויואב </title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540569,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:41:21 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:41:21Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:41:21Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540569,00.html</guid>
+      <cfi:id>5</cfi:id>
+      <cfi:effectiveId>2826772195</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">רקטה נפלה בשטח פתוח במועצה האזורית שדות נגב</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540567,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:38:03 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:38:03Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:38:03Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540567,00.html</guid>
+      <cfi:id>4</cfi:id>
+      <cfi:effectiveId>1518284691</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">בעקבות ירי הטילים: הממשלה תעביר 15 מיליון שקל לרשויות המקומיות</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540566,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:37:12 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:37:12Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:37:12Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540566,00.html</guid>
+      <cfi:id>3</cfi:id>
+      <cfi:effectiveId>1007370409</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">ביהמ"ש למפעל "כרמל כימיקלים" בעתלית: לפנות עד מחר החומרים המסוכנים</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540564,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:35:57 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:35:57Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:35:57Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540564,00.html</guid>
+      <cfi:id>2</cfi:id>
+      <cfi:effectiveId>2686620032</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">שש רקטות נפלו ביישובים פתוחים באשכול, אין נפגעים</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540559,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:25:39 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:25:39Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:25:39Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540559,00.html</guid>
+      <cfi:id>1</cfi:id>
+      <cfi:effectiveId>3320741828</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+    <item>
+      <category>מבזקים</category>
+      <title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="text">הג'יהאד האיסלאמי לקח אחריות על הירי לגוש דן</title>
+      <description xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" cf:type="html"></description>
+      <link>http://www.ynet.co.il/articles/0,7340,L-4540557,00.html</link>
+      <pubDate>Wed, 09 Jul 2014 15:20:37 GMT</pubDate>
+      <atom:published xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:20:37Z</atom:published>
+      <atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2014-07-09T15:20:37Z</atom:updated>
+      <guid>http://www.ynet.co.il/articles/0,7340,L-4540557,00.html</guid>
+      <cfi:id>0</cfi:id>
+      <cfi:effectiveId>4213073730</cfi:effectiveId>
+      <cfi:read>true</cfi:read>
+      <cfi:downloadurl>http://www.ynet.co.il/Integration/StoryRss1854.xml</cfi:downloadurl>
+      <cfi:lastdownloadtime>2014-07-09T15:00:28.851Z</cfi:lastdownloadtime>
+    </item>
+  </channel>
+</rss>

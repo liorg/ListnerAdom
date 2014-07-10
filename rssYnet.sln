@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rssYnet", "rssYnet\rssYnet.csproj", "{A46AC7E1-CDF9-4C66-9D55-C542E9DB98C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rssYnet", "RssYnet\rssYnet.csproj", "{A46AC7E1-CDF9-4C66-9D55-C542E9DB98C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
