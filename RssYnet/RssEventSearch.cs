@@ -31,9 +31,10 @@ namespace rssYnet
             //listBox1.Items.Add(obj.ToString());
         }
         RssSearchKeys rss;
+        string[] _searchKey=null;
         private void btnExcute_Click(object sender, EventArgs e)
         {
-            var search = Util.Utils.keySearchSplitter(txtSearch.Text.Trim());
+           // var search = Util.Utils.keySearchSplitter(txtSearch.Text.Trim());
             int interval = int.Parse(txtTS.Text.Trim()) * 1000;
             if (btnExcute.Text == "עצור")
             {
@@ -46,14 +47,31 @@ namespace rssYnet
             }
             else
             {
+                if (_searchKey==null || !_searchKey.Any())
+                {
+                    MessageBox.Show("יש לבחור חיפוש");
+                    return;
+                }
                 txtSearch.Enabled = true;
-                rss.Play(interval, search);
+               
+                rss.Play(interval, _searchKey);
                 listBox1.Items.Clear();
                 btnExcute.Text = "עצור";
             }
 
             //btnExcute.Text = timer1.Enabled ? "עצור" : "הפעל";
             
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSearch search = new frmSearch();
+             DialogResult res= search.ShowDialog();
+             if (res==System.Windows.Forms.DialogResult.OK)
+             {
+                 _searchKey = search.Items.ToArray();
+             }
+
         }
     }
 }
