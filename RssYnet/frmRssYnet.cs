@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rssYnet.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -94,6 +95,12 @@ namespace rssYnet
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RssAsync rss = new RssAsync("http://www.ynet.co.il/Integration/StoryRss1854.xml");
+            rss.Excute();
         }
     }
 }
