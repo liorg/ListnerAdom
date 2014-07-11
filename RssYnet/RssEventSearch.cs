@@ -38,7 +38,7 @@ namespace rssYnet
             int interval = int.Parse(txtTS.Text.Trim()) * 1000;
             if (btnExcute.Text == "עצור")
             {
-                txtSearch.Enabled = false;
+               // txtSearch.Enabled = false;
                 rss.Stop();
 
                 btnExcute.Text = "הפעל";
@@ -52,7 +52,7 @@ namespace rssYnet
                     MessageBox.Show("יש לבחור חיפוש");
                     return;
                 }
-                txtSearch.Enabled = true;
+              //  txtSearch.Enabled = true;
                
                 rss.Play(interval, _searchKey);
                 listBox1.Items.Clear();
@@ -65,12 +65,28 @@ namespace rssYnet
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearch search = new frmSearch();
+            frmSearch search = new frmSearch(_searchKey);
              DialogResult res= search.ShowDialog();
              if (res==System.Windows.Forms.DialogResult.OK)
              {
                  _searchKey = search.Items.ToArray();
              }
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            liorgrossman l = new liorgrossman();
+            l.ShowDialog();
+        }
+
+        private void RssEventSearch_Load(object sender, EventArgs e)
+        {
+            _searchKey=new string[] {"אזעקה גוש דן","אזעקה","אזעקת גוש דן"};
+        }
+
+        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

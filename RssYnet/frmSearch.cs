@@ -26,9 +26,16 @@ namespace rssYnet
             }
         
         }
-        public frmSearch()
+        public frmSearch(string[] search)
         {
             InitializeComponent();
+            if (search!=null && search.Any())
+            {
+                foreach (var item in search)
+                {
+                    lstItems.Items.Add(item);
+                }
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
