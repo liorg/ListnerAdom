@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace rssYnet
 {
-    partial class liorgrossman : Form
+    partial class AboutBoxLiorGrossman : Form
     {
-        public liorgrossman()
+        public AboutBoxLiorGrossman()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
@@ -101,15 +101,5 @@ namespace rssYnet
             }
         }
         #endregion
-
-        private void labelCompanyName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

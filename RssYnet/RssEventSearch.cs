@@ -84,7 +84,7 @@ namespace rssYnet
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            liorgrossman l = new liorgrossman();
+            AboutBoxLiorGrossman l = new AboutBoxLiorGrossman();
             l.ShowDialog();
         }
 
