@@ -22,11 +22,7 @@ namespace rssYnet
         string _rssUrl;
         public RssEventSearch()
         {
-            InitializeComponent();
-            _rssUrl = "http://www.ynet.co.il/Integration/StoryRss1854.xml";
-            rss = new RssSearchKeys(_rssUrl);
-            rss.Listner += rss_Listner;
-            Excute();
+            InitializeComponent(); 
         }
 
         private void rss_Listner(MessageItem obj)
@@ -34,6 +30,12 @@ namespace rssYnet
             lock (o)
             {
                 listBox1.Items.Insert(0, obj);
+                if (obj.IsSearch)
+                {
+                    notifyIcon1.BalloonTipText = obj.Title ;
+                    notifyIcon1.BalloonTipTitle = "תוצאת חיפוש" + "[" + obj.DateItem.ToString() + "]";
+                    notifyIcon1.ShowBalloonTip(1000);
+                }
             }
 
         }
@@ -41,17 +43,14 @@ namespace rssYnet
         private void btnExcute_Click(object sender, EventArgs e)
         {
             Excute();
-
         }
 
 
         void Excute()
         {
             rss.Rss = _rssUrl;
-            // if (btnExcute.Text == "עצור")
             if (!isPlay)
             {
-                // txtSearch.Enabled = false;
                 rss.Stop();
                 isPlay = true;
                 btnExcute.Text = "הפעל";
@@ -89,9 +88,15 @@ namespace rssYnet
         }
 
         private void RssEventSearch_Load(object sender, EventArgs e)
-        {
-            _searchKey = new string[] { "אזעקה גוש דן", "אזעקה", "אזעקת גוש דן" };
-            _interval = 2;
+        { 
+           _searchKey = new string[] { "אזעקה גוש דן", "אזעקה", "אזעקת גוש דן" };
+         //   _searchKey = new string[] {   "  אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב  " };
+
+            _interval = 2; isPlay = true;
+            _rssUrl = "http://www.ynet.co.il/Integration/StoryRss1854.xml";
+            rss = new RssSearchKeys(_rssUrl);
+            rss.Listner += rss_Listner;
+            Excute();
           
         }
 
@@ -113,6 +118,33 @@ namespace rssYnet
         private void toolStripSeparator1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RssEventSearch_Resize(object sender, EventArgs e)
+        {
+            Hide();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void toolShow_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void toolStripSeparator2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
