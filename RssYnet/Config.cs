@@ -12,9 +12,45 @@ namespace rssYnet
 {
     public partial class Config : Form
     {
-        public Config()
+        public Config(int interval ,string rss)
         {
             InitializeComponent();
+            ddInterval.Text = interval.ToString();
+            txtRss.Text = rss;
+        }
+
+        public int Interval {
+
+
+            get
+            {
+                int intrv=0;
+                int.TryParse(ddInterval.Text.Trim(), out intrv);
+
+                return intrv;
+            }
+        
+        
+        }
+
+        public string RssFeed
+        {
+            get
+            {
+
+                return txtRss.Text.Trim();
+            }
+
+        }
+
+        private void Config_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

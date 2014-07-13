@@ -15,18 +15,14 @@ namespace rssYnet.Util
     public class RssAsync
     {
         string _rssUrl; private string _Title;
-        /// <summary>
-        /// Gets the title of the RSS feed.
-        /// </summary>
+    
         public string Title
         {
             get { return _Title; }
         }
 
         private string _Description;
-        /// <summary>
-        /// Gets the description of the RSS feed.
-        /// </summary>
+       
         public string Description
         {
             get { return _Description; }
@@ -34,17 +30,29 @@ namespace rssYnet.Util
 
         private DateTime _LastUpdated;
         private Collection<RssItem> _Items = new Collection<RssItem>();
-        /// <summary>
-        /// Gets all the items in the RSS feed.
-        /// </summary>
+       
         public Collection<RssItem> Items
         {
             get { return _Items; }
         }
+
         public RssAsync(string rssUrl)
         {
             _rssUrl = rssUrl;
         }
+
+        public string RssUrl
+        {
+            get
+            {
+                return _rssUrl;
+            }
+            set
+            {
+                _rssUrl = value;
+            }
+        }
+
 
         public async void Excute()
         {  
@@ -101,6 +109,7 @@ namespace rssYnet.Util
             var xml = XElement.Parse(xmlPage);
 
         }
+
         private void ParseItems(XmlDocument doc)
         {
             _Items.Clear();
@@ -121,10 +130,7 @@ namespace rssYnet.Util
             }
         }
 
-        /// <summary>
-        /// Parses the XmlNode with the specified XPath query 
-        /// and assigns the value to the property parameter.
-        /// </summary>
+     
         private void ParseElement(XmlNode parent, string xPath, ref string property)
         {
             XmlNode node = parent.SelectSingleNode(xPath);

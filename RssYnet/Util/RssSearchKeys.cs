@@ -15,7 +15,7 @@ namespace rssYnet.Util
 
         public override string ToString()
         {
-           return String.Format("{0}> {1},{2} [{3}]", Index, Title, DateItem, IsSearch);
+            return String.Format("{0}> {1},{2} [{3}]", Index, Title, DateItem, IsSearch);
         }
     }
 
@@ -24,23 +24,44 @@ namespace rssYnet.Util
     {
         string[] _search;
         List<int> _eventsRead = new List<int>();
-        public event Action<MessageItem> Listner=null;
+        public event Action<MessageItem> Listner = null;
         RssAsync _reader;
         System.Windows.Forms.Timer _timer;
         int _rowid;
-        public RssSearchKeys()
+        string _rss;
+
+        public string Rss
         {
+
+            get
+            {
+                return _rss;
+            }
+
+
+            set
+            {
+                _rss = value;
+
+            }
+
+        }
+        
+        public RssSearchKeys(string rss)
+        {
+            _rss = rss;
             _eventsRead = new List<int>();
-            _reader = new RssAsync("http://www.ynet.co.il/Integration/StoryRss1854.xml");
+            _reader = new RssAsync(_rss);
             _timer = new System.Windows.Forms.Timer();
             _rowid = 0;
 
         }
+     
         public void Play(int Interval, string[] search)
         {
-            _rowid = 0; _search = search;
+            _rowid = 0; 
+            _search = search;
             _eventsRead.Clear();
-            GetData();
             _timer.Enabled = true;
             _timer.Tick += OnTimerTick;
             _timer.Interval = 10000;
@@ -52,18 +73,18 @@ namespace rssYnet.Util
         {
             GetData();
         }
-       
+
         public void Pause()
         {
             _timer.Enabled = false;
         }
-       
+
         public void Stop()
         {
             _rowid = 0; _timer.Enabled = false;
             _eventsRead.Clear();
         }
-      
+
         public void Resume()
         {
             _timer.Enabled = true;
@@ -71,9 +92,9 @@ namespace rssYnet.Util
 
         void GetData()
         {
-            
+
             _reader.Excute();
-            var data=_reader.Items.OrderBy(d => d.Date).ToList();
+            var data = _reader.Items.OrderBy(d => d.Date).ToList();
             foreach (var item in data)
             {
 
@@ -99,7 +120,7 @@ namespace rssYnet.Util
                 //  listBox1.Items.Add(d);
                 //listBox1.Items.Insert(0, d);
                 //if (isFound) listBox1.SetItemColor(i, Color.Red);
-             
+
                 if (Listner != null)
                 {
                     MessageItem message = new MessageItem { Index = _rowid, IsSearch = isFound, Title = item.Title, DateItem = item.Date };

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtTS = new System.Windows.Forms.TextBox();
             this.btnExcute = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,23 +37,16 @@
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new ImprovedListBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.toolStripExcute = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.listBox1 = new ImprovedListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtTS
-            // 
-            this.txtTS.Location = new System.Drawing.Point(560, 51);
-            this.txtTS.Name = "txtTS";
-            this.txtTS.Size = new System.Drawing.Size(161, 20);
-            this.txtTS.TabIndex = 7;
-            this.txtTS.TabStop = false;
-            this.txtTS.Text = "2";
-            // 
             // btnExcute
             // 
-            this.btnExcute.Location = new System.Drawing.Point(316, 79);
+            this.btnExcute.Location = new System.Drawing.Point(24, 39);
             this.btnExcute.Name = "btnExcute";
             this.btnExcute.Size = new System.Drawing.Size(144, 32);
             this.btnExcute.TabIndex = 8;
@@ -76,6 +68,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripExcute,
+            this.toolStripSeparator1,
             this.searchToolStripMenuItem,
             this.toolStripMenuItem1,
             this.configurationToolStripMenuItem});
@@ -117,19 +111,32 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 117);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(710, 134);
-            this.listBox1.TabIndex = 5;
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
+            // 
+            // toolStripExcute
+            // 
+            this.toolStripExcute.Name = "toolStripExcute";
+            this.toolStripExcute.Size = new System.Drawing.Size(152, 22);
+            this.toolStripExcute.Text = "Play";
+            this.toolStripExcute.Click += new System.EventHandler(this.toolStripExcute_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 91);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(710, 160);
+            this.listBox1.TabIndex = 5;
             // 
             // RssEventSearch
             // 
@@ -137,7 +144,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 260);
             this.Controls.Add(this.btnExcute);
-            this.Controls.Add(this.txtTS);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -154,7 +160,6 @@
         #endregion
 
         private ImprovedListBox listBox1;
-        private System.Windows.Forms.TextBox txtTS;
         private System.Windows.Forms.Button btnExcute;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -164,6 +169,8 @@
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExcute;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 
     }
 }
