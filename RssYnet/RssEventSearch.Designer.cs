@@ -49,14 +49,21 @@
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listBox1 = new ImprovedListBox();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExcute
             // 
-            this.btnExcute.Location = new System.Drawing.Point(24, 39);
+            this.btnExcute.Location = new System.Drawing.Point(155, 27);
             this.btnExcute.Name = "btnExcute";
             this.btnExcute.Size = new System.Drawing.Size(144, 32);
             this.btnExcute.TabIndex = 8;
@@ -195,22 +202,61 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "toolStripMenuItem2";
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 24);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(8, 306);
+            this.splitter1.TabIndex = 10;
+            this.splitter1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::rssYnet.Properties.Resources.ynet_logo_new;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 58);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(15, 92);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(698, 236);
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(690, 210);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "תוצאות חיפוש";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // listBox1
             // 
             this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 91);
+            this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(710, 160);
-            this.listBox1.TabIndex = 5;
+            this.listBox1.Size = new System.Drawing.Size(678, 199);
+            this.listBox1.TabIndex = 7;
             // 
             // RssEventSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 260);
+            this.ClientSize = new System.Drawing.Size(725, 330);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.btnExcute);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RssEventSearch";
@@ -220,6 +266,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +276,6 @@
 
         #endregion
 
-        private ImprovedListBox listBox1;
         private System.Windows.Forms.Button btnExcute;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -247,6 +295,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem יציאהToolStripMenuItem;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ImprovedListBox listBox1;
 
     }
 }

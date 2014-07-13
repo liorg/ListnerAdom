@@ -35,7 +35,10 @@ namespace rssYnet
                 {
                     notifyIcon1.BalloonTipText = obj.Title;
                     notifyIcon1.BalloonTipTitle = "תוצאת חיפוש" + "[" + obj.DateItem.ToString() + "]";
-                    notifyIcon1.ShowBalloonTip(1000);
+                    notifyIcon1.ShowBalloonTip(500);
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
                 }
             }
 
@@ -43,6 +46,8 @@ namespace rssYnet
 
         private void btnExcute_Click(object sender, EventArgs e)
         {
+            SearchCategory category = new SearchCategory();
+           // category
             Excute();
         }
 

@@ -81,6 +81,7 @@
     <Compile Include="Util\RssAsync.cs" />
     <Compile Include="Util\RssItem.cs" />
     <Compile Include="Util\RssSearchKeys.cs" />
+    <Compile Include="Util\SearchCategory.cs" />
     <Compile Include="Util\Utils.cs" />
     <EmbeddedResource Include="AboutBoxLiorGrossman.resx">
       <DependentUpon>AboutBoxLiorGrossman.cs</DependentUpon>
@@ -99,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RssEventSearch.resx">
       <DependentUpon>RssEventSearch.cs</DependentUpon>
@@ -118,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="favicon[1].ico" />
+    <None Include="Resources\ynet_logo_new.gif" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
