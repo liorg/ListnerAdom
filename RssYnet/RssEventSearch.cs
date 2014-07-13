@@ -131,7 +131,6 @@ namespace rssYnet
             Excute();
         }
 
-
         private void RssEventSearch_Resize(object sender, EventArgs e)
         {
             Hide();
