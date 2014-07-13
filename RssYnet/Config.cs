@@ -17,6 +17,8 @@ namespace rssYnet
             InitializeComponent();
             ddInterval.Text = interval.ToString();
             txtRss.Text = rss;
+            comboBox1.SelectedValue = rss;
+            comboBox1.Text = rss;
         }
 
         public int Interval {
@@ -51,6 +53,12 @@ namespace rssYnet
         private void btnOk_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if( comboBox1.SelectedItem!=null)
+                txtRss.Text = comboBox1.SelectedItem.ToString().Trim();        
         }
     }
 }

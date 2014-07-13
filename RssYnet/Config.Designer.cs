@@ -30,17 +30,18 @@
         {
             this.btnOk = new System.Windows.Forms.Button();
             this.ddInterval = new System.Windows.Forms.DomainUpDown();
-            this.txtRss = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtRss = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(113, 227);
+            this.btnOk.Location = new System.Drawing.Point(131, 128);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(75, 41);
             this.btnOk.TabIndex = 0;
             this.btnOk.Text = "אישור";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -69,13 +70,6 @@
             this.ddInterval.TabIndex = 1;
             this.ddInterval.Text = "2";
             // 
-            // txtRss
-            // 
-            this.txtRss.Location = new System.Drawing.Point(98, 72);
-            this.txtRss.Name = "txtRss";
-            this.txtRss.Size = new System.Drawing.Size(215, 20);
-            this.txtRss.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -88,17 +82,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 75);
+            this.label2.Location = new System.Drawing.Point(27, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "כתובת RSS";
             // 
+            // txtRss
+            // 
+            this.txtRss.Location = new System.Drawing.Point(98, 95);
+            this.txtRss.Name = "txtRss";
+            this.txtRss.Size = new System.Drawing.Size(215, 20);
+            this.txtRss.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "http://www.ynet.co.il/Integration/StoryRss1854.xml",
+            "http://rss.walla.co.il/?w=/1/22/0/@rss",
+            "http://rss.nrg.co.il/newsflash/"});
+            this.comboBox1.Location = new System.Drawing.Point(98, 68);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(215, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 262);
+            this.ClientSize = new System.Drawing.Size(334, 181);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRss);
@@ -116,8 +131,9 @@
 
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.DomainUpDown ddInterval;
-        private System.Windows.Forms.TextBox txtRss;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRss;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

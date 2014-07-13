@@ -60,6 +60,8 @@ namespace rssYnet
                 isPlay = true;
                 btnExcute.Text = "הפעל";
                 toolStripExcute.Text = "הפעל";
+                searchToolStripMenuItem.Enabled = true;
+                configurationToolStripMenuItem.Enabled = true;
             }
             else
             {
@@ -72,6 +74,8 @@ namespace rssYnet
                 listBox1.Items.Clear();
                 btnExcute.Text = "עצור"; toolStripExcute.Text = "עצור";
                 isPlay = false;
+                searchToolStripMenuItem.Enabled = false;
+                configurationToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -93,6 +97,7 @@ namespace rssYnet
         {
             //  _searchKey = new string[] { "אזעקה גוש דן", "אזעקה", "אזעקת גוש דן" };
             _searchKey = new string[] { 
+                "אזעקה | אזעקות| אזעקת | צבע אדום",
                " אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב |גוש דן"
            ," אזעקה | אזעקת + אשקלון| אזור התעשיה אשקלון"
              ," אזעקה | אזעקת + מועצת |מועצה + אשכול "
@@ -104,7 +109,7 @@ namespace rssYnet
 
             _interval = 2; 
             isPlay = true;
-            _rssUrl = "http://www.ynet.co.il/Integration/StoryRss1854.xml";
+            _rssUrl = "http://rss.walla.co.il/?w=/1/22/0/@rss";// "http://www.ynet.co.il/Integration/StoryRss1854.xml";
             rss = new RssSearchKeys(_rssUrl);
             rss.Listner += rss_Listner;
             Excute();
