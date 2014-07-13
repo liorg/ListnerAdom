@@ -38,15 +38,17 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.יציאהToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolShow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new ImprovedListBox();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -80,7 +82,9 @@
             this.toolStripSeparator1,
             this.searchToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.configurationToolStripMenuItem});
+            this.configurationToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.יציאהToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -88,34 +92,45 @@
             // toolStripExcute
             // 
             this.toolStripExcute.Name = "toolStripExcute";
-            this.toolStripExcute.Size = new System.Drawing.Size(148, 22);
+            this.toolStripExcute.Size = new System.Drawing.Size(116, 22);
             this.toolStripExcute.Text = "Play";
             this.toolStripExcute.Click += new System.EventHandler(this.toolStripExcute_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
-            this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.searchToolStripMenuItem.Text = "חיפוש";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 6);
             // 
             // configurationToolStripMenuItem
             // 
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.configurationToolStripMenuItem.Text = "Configuration";
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.configurationToolStripMenuItem.Text = "הגדרות";
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(113, 6);
+            // 
+            // יציאהToolStripMenuItem
+            // 
+            this.יציאהToolStripMenuItem.Name = "יציאהToolStripMenuItem";
+            this.יציאהToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.יציאהToolStripMenuItem.Text = "יציאה";
+            this.יציאהToolStripMenuItem.Click += new System.EventHandler(this.יציאהToolStripMenuItem_Click);
             // 
             // hELPToolStripMenuItem
             // 
@@ -128,7 +143,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.aboutToolStripMenuItem.Text = "עלינו";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -150,36 +165,35 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(104, 60);
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
-            // 
-            // toolExit
-            // 
-            this.toolExit.Name = "toolExit";
-            this.toolExit.Size = new System.Drawing.Size(152, 22);
-            this.toolExit.Text = "יציאה";
-            this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            this.toolStripSeparator2.Click += new System.EventHandler(this.toolStripSeparator2_Click);
-            // 
             // toolShow
             // 
             this.toolShow.Name = "toolShow";
-            this.toolShow.Size = new System.Drawing.Size(152, 22);
+            this.toolShow.Size = new System.Drawing.Size(103, 22);
             this.toolShow.Text = "הצג";
             this.toolShow.Click += new System.EventHandler(this.toolShow_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(100, 6);
+            // 
+            // toolExit
+            // 
+            this.toolExit.Name = "toolExit";
+            this.toolExit.Size = new System.Drawing.Size(103, 22);
+            this.toolExit.Text = "יציאה";
+            this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(100, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
             // 
             // listBox1
             // 
@@ -200,7 +214,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RssEventSearch";
-            this.Text = "RssEventSearch";
+            this.Text = "מאזין RSS YNET";
             this.Load += new System.EventHandler(this.RssEventSearch_Load);
             this.Resize += new System.EventHandler(this.RssEventSearch_Resize);
             this.menuStrip1.ResumeLayout(false);
@@ -231,6 +245,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolShow;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem יציאהToolStripMenuItem;
 
     }
 }

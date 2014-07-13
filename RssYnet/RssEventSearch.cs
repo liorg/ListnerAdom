@@ -20,9 +20,10 @@ namespace rssYnet
         string[] _searchKey = null;
         int _interval;
         string _rssUrl;
+
         public RssEventSearch()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void rss_Listner(MessageItem obj)
@@ -32,19 +33,18 @@ namespace rssYnet
                 listBox1.Items.Insert(0, obj);
                 if (obj.IsSearch)
                 {
-                    notifyIcon1.BalloonTipText = obj.Title ;
+                    notifyIcon1.BalloonTipText = obj.Title;
                     notifyIcon1.BalloonTipTitle = "תוצאת חיפוש" + "[" + obj.DateItem.ToString() + "]";
                     notifyIcon1.ShowBalloonTip(1000);
                 }
             }
 
         }
-       
+
         private void btnExcute_Click(object sender, EventArgs e)
         {
             Excute();
         }
-
 
         void Excute()
         {
@@ -55,8 +55,6 @@ namespace rssYnet
                 isPlay = true;
                 btnExcute.Text = "הפעל";
                 toolStripExcute.Text = "הפעל";
-
-
             }
             else
             {
@@ -65,7 +63,6 @@ namespace rssYnet
                     MessageBox.Show("יש לבחור חיפוש");
                     return;
                 }
-             
                 rss.Play(_interval, _searchKey);
                 listBox1.Items.Clear();
                 btnExcute.Text = "עצור"; toolStripExcute.Text = "עצור";
@@ -78,7 +75,7 @@ namespace rssYnet
             frmSearch search = new frmSearch(_searchKey);
             DialogResult res = search.ShowDialog();
             if (res == System.Windows.Forms.DialogResult.OK)
-               _searchKey = search.Items.ToArray();
+                _searchKey = search.Items.ToArray();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,16 +85,25 @@ namespace rssYnet
         }
 
         private void RssEventSearch_Load(object sender, EventArgs e)
-        { 
-           _searchKey = new string[] { "אזעקה גוש דן", "אזעקה", "אזעקת גוש דן" };
-         //   _searchKey = new string[] {   "  אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב  " };
+        {
+            //  _searchKey = new string[] { "אזעקה גוש דן", "אזעקה", "אזעקת גוש דן" };
+            _searchKey = new string[] { 
+               " אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב |גוש דן"
+           ," אזעקה | אזעקת + אשקלון| אזור התעשיה אשקלון"
+             ," אזעקה | אזעקת + מועצת |מועצה + אשכול "
+             ,"אזעקה | אזעקת + אשדוד"
+                 ,"אזעקה | אזעקת + ראשון לציון| רשל\"צ | חולון |בת ים|בת-ים|בת - ים| גוש דן "
+           };
 
-            _interval = 2; isPlay = true;
+            //   _searchKey = new string[] {   "  אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב  " };
+
+            _interval = 2; 
+            isPlay = true;
             _rssUrl = "http://www.ynet.co.il/Integration/StoryRss1854.xml";
             rss = new RssSearchKeys(_rssUrl);
             rss.Listner += rss_Listner;
             Excute();
-          
+
         }
 
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,10 +121,6 @@ namespace rssYnet
             Excute();
         }
 
-        private void toolStripSeparator1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void RssEventSearch_Resize(object sender, EventArgs e)
         {
@@ -137,12 +139,12 @@ namespace rssYnet
             WindowState = FormWindowState.Normal;
         }
 
-        private void toolStripSeparator2_Click(object sender, EventArgs e)
+        private void toolExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void toolExit_Click(object sender, EventArgs e)
+        private void יציאהToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

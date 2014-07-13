@@ -19,7 +19,6 @@ namespace rssYnet.Util
         }
     }
 
-
     public class RssSearchKeys
     {
         string[] _search;
@@ -105,10 +104,10 @@ namespace rssYnet.Util
                 Console.WriteLine(item.Title);
                 foreach (var searchItem in _search)
                 {
-
-                    if (item.Title.Trim().Contains(searchItem.Trim()))
+                  if (Utils.SearchContent(item.Title.Trim(),searchItem))
+                 //   if (item.Title.Trim().Contains(searchItem.Trim()))
                     {
-                        Console.WriteLine(item.Title);
+                      //  Console.WriteLine(item.Title);
                         isFound = true;
                     }
 
