@@ -86,12 +86,39 @@ namespace rssYnet
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Show();
+            var form=this;
+            // force window to have focus
+            uint foreThread =win32.GetWindowThreadProcessId(win32.GetForegroundWindow(), IntPtr.Zero);
+            uint appThread = win32.GetCurrentThreadId();
+            const uint SW_SHOW = 5;
+            if (foreThread != appThread)
+            {
+                win32.AttachThreadInput(foreThread, appThread, true);
+                win32.BringWindowToTop(form.Handle);
+                win32.ShowWindow(form.Handle, SW_SHOW);
+               win32. AttachThreadInput(foreThread, appThread, false);
+            }
+            else
+            {
+               win32.BringWindowToTop(form.Handle);
+                win32.ShowWindow(form.Handle, SW_SHOW);
+            }
+            form.Activate();
+            //Show();
+            //this.TopMost = true; BringToFront();
+          
+            //Focus();
+         
+     
         }
 
         private void OrefAlert_Resize(object sender, EventArgs e)
         {
-            Hide();
+            if (FormWindowState.Minimized == this.WindowState)
+            {
+                this.Hide();
+            }
+
         }
 
         private void toolExit_Click(object sender, EventArgs e)
