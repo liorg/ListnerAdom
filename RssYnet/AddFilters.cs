@@ -31,6 +31,22 @@ namespace rssYnet
             locations.YeshovimLocations.Add("עוטף עזה 217", new string[] { "זיקים", "כרמיה" });
             locations.YeshovimLocations.Add("עוטף עזה 218", new string[] { "נתיב העשרה", "יד מרדכי" });
             locations.YeshovimLocations.Add("עוטף עזה 231", new string[] { "נירים", "עין השלושה" });
+
+            locations.YeshovimLocations.Add("נגב 296", new string[] { "א נבאר", 
+                "סייד" ,"עטאונה" ,"אעצם" ,"חורה" ,
+                "כרמים" ,"כרמית" ,"מולדה" ,"מיתר" ,
+                "סנסנה" ,"עוקבי"             
+            });
+            locations.YeshovimLocations.Add("נגב 297", new string[] { 
+                
+                "אבו קוידר", "אבו תלול","אל חמידי", "אל עת'אמין","ביר אבו אל חמאם", "נבטים","שגב שלום"
+            
+            });
+
+
+            locations.YeshovimLocations.Add("באר שבע 292", new string[] { "מסעודין אל עזאזמה", "באר שבע" });
+
+            // locations.YeshovimLocations.Add("", new string[] { "x", "x" });
             var json = SerializeObject.JsonSerializeObject(locations);
 
             string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
