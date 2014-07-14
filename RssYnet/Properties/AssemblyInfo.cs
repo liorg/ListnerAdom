@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("rss Ynet")]
-[assembly: AssemblyDescription("מאזין לדיווחי YNET ומבצע סינונים רלוונטים ")]
+[assembly: AssemblyTitle("צבע אדום בשולחן העבודה")]
+[assembly: AssemblyDescription("מאזין לדיווחים של צבע אדום ")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ליאור גרוסמן")]
 [assembly: AssemblyProduct("rssYnet")]
