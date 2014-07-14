@@ -141,7 +141,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="rssYnet\rss.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -152,8 +151,6 @@
     <None Include="Resources\ynet_logo_new.gif" />
     <EmbeddedResource Include="add.ico" />
     <None Include="Resources\1588.png" />
-    <Content Include="rssYnet\.gitattributes" />
-    <Content Include="rssYnet\.gitignore" />
     <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup />
