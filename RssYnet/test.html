@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+    <title></title>  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var cachid = "";
+        $(document).ready(function () {
+          setInterval(function () {
+                var alertUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
+                $.getJSON(alertUrl)
+                  .done(function (data) {
+                      if (cachid != data.id) {
+                          $("#alert").append(data.id + " " + data.title);
+                      }
+                      //$("#alert").append(data.id+ " "+data.title);
+                      $("#alert").text(data.id+ " "+data.title);
+                      $.each(data.data, function (i, item) {
+                          alert(data.data);
+                          debugger;
+                      });
+                  });
+            }, 1000);
+            // Handler for .ready() called.
+        });
+            
+        
+
+    </script>
+</head>
+<body>
+    <div id="alert">
+
+        
+
+    </div>
+
+
+</body>
+</html>

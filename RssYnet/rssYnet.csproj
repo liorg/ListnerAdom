@@ -38,6 +38,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,11 +64,23 @@
     <Compile Include="Config.Designer.cs">
       <DependentUpon>Config.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrefConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrefConfig.Designer.cs">
+      <DependentUpon>OrefConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSearch.Designer.cs">
       <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrefAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrefAlert.Designer.cs">
+      <DependentUpon>OrefAlert.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,13 +90,17 @@
     <Compile Include="RssEventSearch.Designer.cs">
       <DependentUpon>RssEventSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util\listboxex.cs">
+    <Compile Include="Util\Oref\JsonAsync.cs" />
+    <Compile Include="Util\exstention\listboxex.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Util\RssAsync.cs" />
-    <Compile Include="Util\RssItem.cs" />
-    <Compile Include="Util\RssSearchKeys.cs" />
-    <Compile Include="Util\SearchCategory.cs" />
+    <Compile Include="Util\Oref\MessageAlert.cs" />
+    <Compile Include="Util\Oref\OrefModel.cs" />
+    <Compile Include="Util\Rss\RssAsync.cs" />
+    <Compile Include="Util\Rss\RssItem.cs" />
+    <Compile Include="Util\search\RssSearchKeys.cs" />
+    <Compile Include="Util\Rss\MessageItem.cs" />
+    <Compile Include="Util\search\SearchCategory.cs" />
     <Compile Include="Util\Utils.cs" />
     <EmbeddedResource Include="AboutBoxLiorGrossman.resx">
       <DependentUpon>AboutBoxLiorGrossman.cs</DependentUpon>
@@ -89,8 +108,14 @@
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrefConfig.resx">
+      <DependentUpon>OrefConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrefAlert.resx">
+      <DependentUpon>OrefAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,8 +146,12 @@
   <ItemGroup>
     <EmbeddedResource Include="favicon[1].ico" />
     <None Include="Resources\ynet_logo_new.gif" />
+    <EmbeddedResource Include="add.ico" />
+    <None Include="Resources\1588.png" />
+    <Content Include="test.html" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

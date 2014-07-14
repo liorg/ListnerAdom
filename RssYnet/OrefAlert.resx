@@ -117,11 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ynet_logo_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ynet_logo_new.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>400, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAICAQAAAABADoAgAAJgAAABAQEAAAAAQAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAAAC
+        AAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAJmZAAAAAAAJkAAAAAAAAAmZmZAAAAAAmZmZkAAAAACZmZmQAAAAAJmZmZkAAAAJmZmZAAAAAA
+        AJmZmZmQAJmZmZAAAAAAAAAJmZmZmQmZmZkAAAAAAAAAAACZmZmZmZmQAAAAAAAAAAAACZmZmZmQAAAA
+        AAAAAAAAAACZmZmZAAAAAAAAAAAAAAAAAJmZmQAAAAAAAAAAAAAAAJmZmZmQAAAAAAAAAAAAAACZmZmZ
+        kAAAAAAAAAAAAACZmZmZmZmQAAAAAAAAAAAJmZmZCZmZkAAAAAAAAAAACZmZAAAJmZkAAAAAAAAAAJmZ
+        kAAACZmZkAAAAAAAAAmZmZAAAACZmZAAAAAAAACZmZkAAAAACZmZAAAAAAAJmZmQAAAAAAmZmQAAAAAA
+        mZmZAAAAAAAAmZkAAAAACZmZkAAAAAAAAJmZkAAAAAmZmQAAAAAAAACZmZAAAACZmZAAAAAAAAAACZmQ
+        AAAAmZmQAAAAAAAAAAmZkAAAAJmZAAAAAAAAAAAJmZAAAAAJkAAAAAAAAAAACZmZAAAAAAAAAAAAAAAA
+        AAmZmQAAAAAAAAAAAAAAAAAAmZkAAAAAAAAAAAAAAAAAAAmQAAAAAAAAAAAAAAAAAAAAAAAA////////
+        //////4f/P/8D/gP+A/4B/Af/AHAf/4AgP//wAH//+AH///wD////A////AH///wB///wAH//4CB//+D
+        4P//B+B//gfwf/wP+D/4H/g/8D/8P+B//B/g//wfwf/+H8H//h/D//4f5//+D////g////8P////n///
+        //8oAAAAEAAAACAAAAABAAQAAAAAAIAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAgAAAgAAAAICAAIAA
+        AACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAmZmZkAAAAAmZ
+        mZmZAAAAmZmZkJmQAJmZmZAAmZAJmZmZAACZmQmZmZAAAJmZmZmQAAAAmZmZmZAAAAAJmZmZAAAAAAmZ
+        mZAAAAAAmZmZmQAAAACZmZmZkAAAAJmZmZmZkAAAmZAJmZmQAACZAACZmZkAAAAAAAmZmQAA/8AAAH+A
+        AAA/AQAAHAcAABgPAAAIHwAAAH8AAAB/AACA/wAAgf8AAAD/AAAAfwAAAB8AABgfAAA8DwAA/g8AAA==
+</value>
   </data>
-  <data name="1588" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1588.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>555, 17</value>
+  </metadata>
 </root>

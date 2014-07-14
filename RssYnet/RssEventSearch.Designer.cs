@@ -50,20 +50,18 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listBox1 = new ImprovedListBox();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExcute
             // 
-            this.btnExcute.Location = new System.Drawing.Point(155, 27);
+            this.btnExcute.Location = new System.Drawing.Point(14, 24);
             this.btnExcute.Name = "btnExcute";
             this.btnExcute.Size = new System.Drawing.Size(144, 32);
             this.btnExcute.TabIndex = 8;
@@ -210,15 +208,6 @@
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::rssYnet.Properties.Resources.ynet_logo_new;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 58);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -254,7 +243,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 330);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.btnExcute);
             this.Controls.Add(this.menuStrip1);
@@ -266,7 +254,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -296,7 +283,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem יציאהToolStripMenuItem;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private ImprovedListBox listBox1;

@@ -16,7 +16,7 @@ namespace rssYnet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RssEventSearch());
+            Application.Run(new OrefAlert());
         } 
     }
 }

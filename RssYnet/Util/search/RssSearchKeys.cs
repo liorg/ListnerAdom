@@ -6,19 +6,6 @@ using System.Timers;
 
 namespace rssYnet.Util
 {
-    public class MessageItem
-    {
-        public string Title { get; set; }
-        public DateTime DateItem { get; set; }
-        public bool IsSearch { get; set; }
-        public int Index { get; set; }
-
-        public override string ToString()
-        {
-            return String.Format("{0}> {1},{2} [{3}]", Index, Title, DateItem, IsSearch);
-        }
-    }
-
     public class RssSearchKeys
     {
         string[] _search;
@@ -52,18 +39,18 @@ namespace rssYnet.Util
             _eventsRead = new List<int>();
             _reader = new RssAsync(_rss);
             _timer = new System.Windows.Forms.Timer();
-            _rowid = 0;
+            _rowid = 0; _timer.Tick += OnTimerTick;
 
         }
      
-        public void Play(int Interval, string[] search)
+        public void Play(int interval, string[] search)
         {
             _rowid = 0; 
             _search = search;
             _eventsRead.Clear();
             _timer.Enabled = true;
-            _timer.Tick += OnTimerTick;
-            _timer.Interval = 10000;
+           
+            _timer.Interval = interval * 1000;
             _timer.Start();
 
         }

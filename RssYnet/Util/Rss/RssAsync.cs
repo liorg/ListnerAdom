@@ -14,8 +14,9 @@ namespace rssYnet.Util
 {
     public class RssAsync
     {
-        string _rssUrl; private string _Title;
-    
+        string _rssUrl; 
+        string _Title;
+     
         public string Title
         {
             get { return _Title; }
@@ -52,7 +53,6 @@ namespace rssYnet.Util
                 _rssUrl = value;
             }
         }
-
 
         public async void Excute()
         {  

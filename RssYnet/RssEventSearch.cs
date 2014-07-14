@@ -26,7 +26,7 @@ namespace rssYnet
             InitializeComponent();
         }
 
-        private void rss_Listner(MessageItem obj)
+        private void Rss_Listner(MessageItem obj)
         {
             lock (o)
             {
@@ -108,10 +108,10 @@ namespace rssYnet
             //   _searchKey = new string[] {   "  אזעקה | אזעקת + תל אביב| פתח תקווה| בני ברק |רמת גן | תל-אביב | תל - אביב  " };
 
             _interval = 2; 
-            isPlay = true;
+            isPlay = false;
             _rssUrl = "http://rss.walla.co.il/?w=/1/22/0/@rss";// "http://www.ynet.co.il/Integration/StoryRss1854.xml";
             rss = new RssSearchKeys(_rssUrl);
-            rss.Listner += rss_Listner;
+            rss.Listner += Rss_Listner;
             Excute();
 
         }
@@ -157,5 +157,13 @@ namespace rssYnet
         {
             Application.Exit();
         }
+
+        private async void  button1_Click(object sender, EventArgs e)
+        {
+            //JsonAsync j = new JsonAsync();
+            //j.Excute();
+        }
+
+        
     }
 }
