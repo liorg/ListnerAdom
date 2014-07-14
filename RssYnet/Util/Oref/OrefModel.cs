@@ -38,6 +38,7 @@ namespace rssYnet.Util
                 return sb.ToString();
             }
         }
+     
         public string VerticalFields
         {
             get

@@ -15,7 +15,7 @@ namespace rssYnet
         public OrefConfig(int interval, string rss)
         {
             InitializeComponent();
-            ddInterval.Text = interval.ToString();
+            numDuration.Value = interval;
             txtRss.Text = rss;
         }
 
@@ -24,10 +24,7 @@ namespace rssYnet
 
             get
             {
-                int intrv=0;
-                int.TryParse(ddInterval.Text.Trim(), out intrv);
-
-                return intrv;
+                return Convert.ToInt32(numDuration.Value);
             }
         
         

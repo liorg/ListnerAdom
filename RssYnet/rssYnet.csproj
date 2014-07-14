@@ -58,6 +58,12 @@
     <Compile Include="AboutBoxLiorGrossman.Designer.cs">
       <DependentUpon>AboutBoxLiorGrossman.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddFilters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFilters.Designer.cs">
+      <DependentUpon>AddFilters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Config.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,10 +96,17 @@
     <Compile Include="RssEventSearch.Designer.cs">
       <DependentUpon>RssEventSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="UTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTest.Designer.cs">
+      <DependentUpon>UTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Oref\JsonAsync.cs" />
     <Compile Include="Util\exstention\listboxex.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Util\Oref\Location.cs" />
     <Compile Include="Util\Oref\MessageAlert.cs" />
     <Compile Include="Util\Oref\OrefModel.cs" />
     <Compile Include="Util\Rss\RssAsync.cs" />
@@ -105,6 +118,9 @@
     <Compile Include="Util\win32\win32.cs" />
     <EmbeddedResource Include="AboutBoxLiorGrossman.resx">
       <DependentUpon>AboutBoxLiorGrossman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFilters.resx">
+      <DependentUpon>AddFilters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Config.resx">
       <DependentUpon>Config.cs</DependentUpon>
@@ -130,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="RssEventSearch.resx">
       <DependentUpon>RssEventSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTest.resx">
+      <DependentUpon>UTest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="lastVersion\rss.zip" />
     <None Include="Properties\Settings.settings">

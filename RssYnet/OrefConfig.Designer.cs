@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.btnOk = new System.Windows.Forms.Button();
-            this.ddInterval = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRss = new System.Windows.Forms.TextBox();
+            this.numDuration = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOk
@@ -45,29 +46,6 @@
             this.btnOk.Text = "אישור";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // ddInterval
-            // 
-            this.ddInterval.Items.Add("1");
-            this.ddInterval.Items.Add("2");
-            this.ddInterval.Items.Add("3");
-            this.ddInterval.Items.Add("4");
-            this.ddInterval.Items.Add("5");
-            this.ddInterval.Items.Add("6");
-            this.ddInterval.Items.Add("7");
-            this.ddInterval.Items.Add("8");
-            this.ddInterval.Items.Add("9");
-            this.ddInterval.Items.Add("10");
-            this.ddInterval.Items.Add("15");
-            this.ddInterval.Items.Add("20");
-            this.ddInterval.Items.Add("25");
-            this.ddInterval.Items.Add("30");
-            this.ddInterval.Items.Add("35");
-            this.ddInterval.Location = new System.Drawing.Point(98, 23);
-            this.ddInterval.Name = "ddInterval";
-            this.ddInterval.Size = new System.Drawing.Size(120, 20);
-            this.ddInterval.TabIndex = 1;
-            this.ddInterval.Text = "2";
             // 
             // label1
             // 
@@ -94,19 +72,32 @@
             this.txtRss.Size = new System.Drawing.Size(215, 20);
             this.txtRss.TabIndex = 2;
             // 
+            // numDuration
+            // 
+            this.numDuration.Location = new System.Drawing.Point(98, 23);
+            this.numDuration.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDuration.Name = "numDuration";
+            this.numDuration.Size = new System.Drawing.Size(120, 20);
+            this.numDuration.TabIndex = 5;
+            // 
             // OrefConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 181);
+            this.Controls.Add(this.numDuration);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRss);
-            this.Controls.Add(this.ddInterval);
             this.Controls.Add(this.btnOk);
             this.Name = "OrefConfig";
             this.Text = "Config";
             this.Load += new System.EventHandler(this.Config_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,9 +106,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.DomainUpDown ddInterval;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRss;
+        private System.Windows.Forms.NumericUpDown numDuration;
     }
 }
