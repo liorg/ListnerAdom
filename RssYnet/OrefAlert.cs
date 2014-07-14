@@ -159,9 +159,12 @@ namespace rssYnet
 
         private void OrefAlert_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            Hide();
-        }
+            if (e.CloseReason != CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+            }
 
       
     }
