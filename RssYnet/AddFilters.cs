@@ -13,6 +13,12 @@ namespace rssYnet
 {
     public partial class AddFilters : Form
     {
+        Locations _locations;
+        string _subPath = @"resources\data.json";
+
+
+
+
         public AddFilters()
         {
             InitializeComponent();
@@ -25,19 +31,20 @@ namespace rssYnet
             locations.YeshovimLocations.Add("עוטף עזה 217", new string[] { "זיקים", "כרמיה" });
             locations.YeshovimLocations.Add("עוטף עזה 218", new string[] { "נתיב העשרה", "יד מרדכי" });
             locations.YeshovimLocations.Add("עוטף עזה 231", new string[] { "נירים", "עין השלושה" });
-            var d=SerializeObject.JsonSerializeObject(locations);
+            var json = SerializeObject.JsonSerializeObject(locations);
+
+            string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
+
+            System.IO.File.WriteAllText(fullPath, json);
 
         }
-        Locations _locations; Locations _dataRepo;
+
+
         private void AddFilters_Load(object sender, EventArgs e)
-        { 
-            var subPath=@"resources\data.json";
-            string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), subPath);
-      
+        {
+            string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
             var json = System.IO.File.ReadAllText(fullPath);
-    
             _locations = SerializeObject.JsonDeserializeToObject<Locations>(json);
-           
             cboCodes.DataSource = _locations.YeshovimLocations.Keys.ToList();
         }
 
@@ -47,8 +54,8 @@ namespace rssYnet
             if (valuesSelected != null && valuesSelected.Any())
                 lstDsec.DataSource = valuesSelected.ToArray();
             else
-                lstDsec.DataSource = new string[]{""};
-           
+                lstDsec.DataSource = new string[] { "" };
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -59,24 +66,39 @@ namespace rssYnet
                 var selectedValue = cboCodes.SelectedValue.ToString();
                 lstFilters.Items.Add(cboCodes.SelectedValue.ToString());
                 lstDsec.DataSource = new string[] { "" };
-                cboCodes.DataSource =data.Where(d=>d.GetHashCode()!= selectedValue.GetHashCode()).ToList();
+                cboCodes.DataSource = data.Where(d => d.GetHashCode() != selectedValue.GetHashCode()).ToList();
             }
 
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            var data=cboCodes.DataSource as List<string>;
+            var data = cboCodes.DataSource as List<string>;
             while (lstFilters.SelectedItems.Count > 0)
             {
-                if(data!=null)
-                     data.Add(lstFilters.SelectedItems[0].ToString());
+                if (data != null)
+                    data.Add(lstFilters.SelectedItems[0].ToString());
                 lstFilters.Items.Remove(lstFilters.SelectedItems[0]);
-                
+
             }
             cboCodes.DataSource = data.ToList();
 
-            
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var data = new List<string>();
+            foreach (var item in lstFilters.Items)
+            {
+                data.Add(item.ToString());
+            }
+            var json = SerializeObject.JsonSerializeObject(data);
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var dic = saveFileDialog1.FileName;
+                System.IO.File.WriteAllText(dic, json);
+            }
         }
     }
 }
