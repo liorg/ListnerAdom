@@ -56,58 +56,31 @@ namespace rssYnet.Util
 
         public async void Excute()
         {  
-            string xmlPage ="";
-            using (XmlReader reader = XmlReader.Create(_rssUrl, new XmlReaderSettings() { Async = true }))
+            byte[] stream;
+
+            using (var client = new HttpClient())
+            {
+                
+                using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
+                using (HttpContent content = response.Content)
+                {
+
+                     stream = await content.ReadAsByteArrayAsync();
+                }
+            }
+            using (var reader = XmlReader.Create(new MemoryStream(stream)))
             {
 
+                var doc = new XmlDocument();
+                doc.Load(reader);
 
-              await reader.MoveToContentAsync();
-             //  await  reader.ReadAsync(); 
+                ParseElement(doc.SelectSingleNode("//channel"), "title", ref _Title);
+                ParseElement(doc.SelectSingleNode("//channel"), "description", ref _Description);
+                ParseItems(doc);
 
-                xmlPage = await reader.ReadOuterXmlAsync();
-           
-                
-                
-         
+                _LastUpdated = DateTime.Now;
 
             }
-          ////  var client = new HttpClient();
-          //  //var st = await client.GetStreamAsync(_rssUrl);
-          //  byte[] stream;
-          //  //string xmlPage = await client.GetStringAsync(_rssUrl);
-          //  string xmlPage;
-          //  using (HttpClient client = new HttpClient())
-          //  {
-          //      client.DefaultRequestHeaders.Add("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
-          //      client.DefaultRequestHeaders.Add("Accept", "*/*");
-          //      client.DefaultRequestHeaders.Add("Accept-Language", "en-gb,en;q=0.5;");
-          //      //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-          //      client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
-          //      using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
-          //      using (HttpContent content = response.Content)
-          //      {
-
-          //         // stream = await content.ReadAsByteArrayAsync();
-
-          //          // ... Read the string.
-          //           xmlPage = await content.ReadAsStringAsync();
-
-
-          //      }
-          //  }
-          // xmlPage= System.Text.UTF8Encoding.UTF8.GetString(stream);
-
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xmlPage);
-
-            ParseElement(doc.SelectSingleNode("//channel"), "title", ref _Title);
-            ParseElement(doc.SelectSingleNode("//channel"), "description", ref _Description);
-            ParseItems(doc);
-
-            _LastUpdated = DateTime.Now;
-
-            var xml = XElement.Parse(xmlPage);
-
         }
 
         private void ParseItems(XmlDocument doc)
