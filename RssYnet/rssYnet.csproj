@@ -114,6 +114,7 @@
     <Compile Include="Util\search\RssSearchKeys.cs" />
     <Compile Include="Util\Rss\MessageItem.cs" />
     <Compile Include="Util\search\SearchCategory.cs" />
+    <Compile Include="Util\SerializeObject.cs" />
     <Compile Include="Util\Utils.cs" />
     <Compile Include="Util\win32\win32.cs" />
     <EmbeddedResource Include="AboutBoxLiorGrossman.resx">
@@ -167,7 +168,10 @@
   <ItemGroup>
     <Content Include="warn.ico" />
     <EmbeddedResource Include="favicon[1].ico" />
-    <None Include="Resources\ynet_logo_new.gif" />
+    <Content Include="Resources\data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\ynet_logo_new.gif" />
     <EmbeddedResource Include="add.ico" />
     <None Include="Resources\1588.png" />
     <Content Include="test.html" />

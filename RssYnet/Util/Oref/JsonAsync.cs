@@ -47,30 +47,20 @@ namespace rssYnet.Util
 
         async void Timer_Tick(object sender, EventArgs e)
         {
-            Excute();
+             Excute();
         }
 
         public async void Excute()
         {
-            //exmple
-            /*{ 
-                    "id" : "1405336638199",
-                    "title" : "פיקוד העורף התרעה במרחב ",
-                    "data" : [
-                    "עוטף עזה 217",
-                    "אשקלון 247"
-                    ]
-                    }
-             */
+           
             OrefModel oref = null;
-            var _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
+           // var _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 using (HttpResponseMessage response = await client.GetAsync(_rssUrl))
                 using (HttpContent content = response.Content)
                 {
-
                     var json = await content.ReadAsStringAsync();
                     using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
                     {

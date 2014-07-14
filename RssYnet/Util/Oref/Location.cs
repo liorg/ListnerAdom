@@ -22,4 +22,11 @@ namespace rssYnet.Util
         public string[] Yeshovim { get; set; }
 
     }
+
+    [DataContract]
+    public class Locations
+    {
+        [DataMember]
+        public Dictionary<string,string[]>  YeshovimLocations { get; set; }
+    }
 }
