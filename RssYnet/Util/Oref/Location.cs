@@ -22,7 +22,4 @@ namespace rssYnet.Util
         public string[] Yeshovim { get; set; }
 
     }
-
-
-
 }
