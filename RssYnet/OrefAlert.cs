@@ -54,7 +54,7 @@ namespace rssYnet
                 isPlay = true;
                 btnExcute.Text = "הפעל";
                 toolStripExcute.Text = "הפעל";
-                searchToolStripMenuItem.Enabled = true;
+                //searchToolStripMenuItem.Enabled = true;
                 configurationToolStripMenuItem.Enabled = true;
             }
             else
@@ -69,7 +69,7 @@ namespace rssYnet
                 btnExcute.Text = "עצור"; 
                 toolStripExcute.Text = "עצור";
                 isPlay = false;
-                searchToolStripMenuItem.Enabled = false;
+               // searchToolStripMenuItem.Enabled = false;
                configurationToolStripMenuItem.Enabled = false;
             }
         }
