@@ -156,5 +156,13 @@ namespace rssYnet
                 _interval = conf.Interval;
             }
         }
+
+        private void OrefAlert_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
+        }
+
+      
     }
 }

@@ -33,6 +33,7 @@
             this.btnExcute = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new ImprovedListBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.יציאהToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new ImprovedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -83,6 +83,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "תוצאות חיפוש";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 27);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(678, 199);
+            this.listBox1.TabIndex = 7;
             // 
             // notifyIcon1
             // 
@@ -184,15 +193,6 @@
             this.aboutToolStripMenuItem.Text = "עלינו";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(678, 199);
-            this.listBox1.TabIndex = 7;
-            // 
             // OrefAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +207,7 @@
             this.Name = "OrefAlert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "עורף הודעות צבע אדום";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrefAlert_FormClosing);
             this.Load += new System.EventHandler(this.OrefAlert_Load);
             this.Resize += new System.EventHandler(this.OrefAlert_Resize);
             this.tabControl1.ResumeLayout(false);
