@@ -35,8 +35,8 @@ namespace rssYnet
                 listBox1.Items.Insert(0, obj);
                // if (obj.IsSearch)
                // {
-                    notifyIcon1.BalloonTipText = obj.Title;
-                    notifyIcon1.BalloonTipTitle = "תוצאת חיפוש" + "[" + obj.DateItem.ToString() + "]";
+                    notifyIcon1.BalloonTipText = obj.VerticalMessage;
+                    notifyIcon1.BalloonTipTitle = "אזעקת צבע אדום" + "[" + obj.DateItem.ToString() + "]";
                     notifyIcon1.ShowBalloonTip(500);
                     Console.Beep();
                     Console.Beep();
