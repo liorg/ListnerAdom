@@ -54,6 +54,8 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnExcute = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.stopHazaka = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -143,12 +145,13 @@
             this.menuStrip1.Size = new System.Drawing.Size(707, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
+            
+
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripExcute,
             this.toolStripSeparator1,
+            this.stopHazaka,
+            this.toolStripSeparator3,
             this.configurationToolStripMenuItem,
             this.toolStripMenuItem3,
             this.toolFilter,
@@ -260,6 +263,18 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "צבע אדום ";
             // 
+            // stopHazaka
+            // 
+            this.stopHazaka.Name = "stopHazaka";
+            this.stopHazaka.Size = new System.Drawing.Size(167, 22);
+            this.stopHazaka.Text = "הפסק צליל";
+            this.stopHazaka.Click += new System.EventHandler(this.stopHazaka_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
+            // 
             // OrefAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +333,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage1;
         private ImprovedListBox listBox2;
+        private System.Windows.Forms.ToolStripMenuItem stopHazaka;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

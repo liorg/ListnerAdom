@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,16 +17,25 @@ namespace rssYnet
     {
         static object o = new object();
         Locations _locations;
+        SoundPlayer _azahakaSound;
         bool isPlay = false;
         string _subPath = @"resources\data.json";
+        string _subPathWav = @"resources\ding.wav";
+        string _subPathFilter = @"resources\filterTemp.json";
+
         string[] _keywords;
         int _interval;
-        JsonAsync _alert; 
+        JsonAsync _alert;
         string _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
+        string _filterPath;
         public OrefAlert()
         {
             InitializeComponent();
-            _interval = 2; 
+            _interval = 2;
+            _fullPathWave = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPathWav);
+            _filterPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPathFilter);
+
+            _azahakaSound = new SoundPlayer(_fullPathWave);
 
             _alert = new JsonAsync(_rssUrl);
             _alert.Listner += Alert_Listner;
@@ -33,8 +44,9 @@ namespace rssYnet
 
         void Alert_Log(string obj)
         {
-            lstLog.Items.Insert(0, DateTime.Now.ToString() +obj);
+            lstLog.Items.Insert(0, DateTime.Now.ToString() + obj);
         }
+        string _fullPathWave;
 
         void Alert_Listner(MessageAlert obj)
         {
@@ -47,17 +59,19 @@ namespace rssYnet
                 {
 
                     notifyIcon1.ShowBalloonTip(3000);
-                     Console.Beep();
-                     Console.Beep(); Console.Beep(); Console.Beep(); Console.Beep();
+                    Console.Beep();
+                    if (_azahakaSound == null)
+                        _azahakaSound = new SoundPlayer(_fullPathWave);
+                    Console.Beep();
+                    _azahakaSound.PlayLooping();
+                    // Console.Beep(); Console.Beep(); Console.Beep(); Console.Beep();
                 }
                 else
                 {
                     notifyIcon1.ShowBalloonTip(500);
                     Console.Beep();
-                  
                 }
             }
-
         }
 
         string Transalte(string[] data)
@@ -69,21 +83,21 @@ namespace rssYnet
                 {
                     if (_locations.YeshovimLocations.ContainsKey(item))
                     {
-                        var j = string.Join(",",_locations.YeshovimLocations[item].ToArray());
+                        var j = string.Join(",", _locations.YeshovimLocations[item].ToArray());
                         sb.AppendLine(j);
                     }
                     else
-                       sb.AppendLine(item);
-                    
+                        sb.AppendLine(item);
+
                 }
-                catch 
+                catch
                 {
                     sb.AppendLine(item);
                 }
             }
 
             return sb.ToString();
-            
+
         }
 
         void Excute()
@@ -100,15 +114,15 @@ namespace rssYnet
             }
             else
             {
-                
-                _alert.Play(_interval,_keywords);
-                if(listBox2.Items!=null)
+
+                _alert.Play(_interval, _keywords);
+                if (listBox2.Items != null)
                     listBox2.Items.Clear();
-                btnExcute.Text = "עצור"; 
+                btnExcute.Text = "עצור";
                 toolStripExcute.Text = "עצור";
                 isPlay = false;
                 toolFilter.Enabled = false; toolStripStatusLabel1.Text = " מאזין";
-               configurationToolStripMenuItem.Enabled = false;
+                configurationToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -119,22 +133,28 @@ namespace rssYnet
 
         private void OrefAlert_Load(object sender, EventArgs e)
         {
-           
             toolStripStatusLabel1.Text = "";
             toolStripStatusLabel2.Text = "";
             isPlay = true;
             string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
+          //  _azahakaSound.Play();
+            if (File.Exists(_filterPath))
+            {
+                var jsonFilter = System.IO.File.ReadAllText(_filterPath);
+                _keywords = SerializeObject.JsonDeserializeToObject<string[]>(jsonFilter);
+                toolStripStatusLabel2.Text = string.Join(",", _keywords);
+            }
             var json = System.IO.File.ReadAllText(fullPath);
             _locations = SerializeObject.JsonDeserializeToObject<Locations>(json);
-           
+
             Excute();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var form=this;
+            var form = this;
             // force window to have focus
-            uint foreThread =win32.GetWindowThreadProcessId(win32.GetForegroundWindow(), IntPtr.Zero);
+            uint foreThread = win32.GetWindowThreadProcessId(win32.GetForegroundWindow(), IntPtr.Zero);
             uint appThread = win32.GetCurrentThreadId();
             const uint SW_SHOW = 5;
             if (foreThread != appThread)
@@ -142,20 +162,17 @@ namespace rssYnet
                 win32.AttachThreadInput(foreThread, appThread, true);
                 win32.BringWindowToTop(form.Handle);
                 win32.ShowWindow(form.Handle, SW_SHOW);
-               win32. AttachThreadInput(foreThread, appThread, false);
+                win32.AttachThreadInput(foreThread, appThread, false);
             }
             else
             {
-               win32.BringWindowToTop(form.Handle);
+                win32.BringWindowToTop(form.Handle);
                 win32.ShowWindow(form.Handle, SW_SHOW);
             }
             form.Activate();
             //Show();
             //this.TopMost = true; BringToFront();
-          
             //Focus();
-         
-     
         }
 
         private void OrefAlert_Resize(object sender, EventArgs e)
@@ -177,10 +194,6 @@ namespace rssYnet
             Excute();
         }
 
-        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void יציאהToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -210,35 +223,34 @@ namespace rssYnet
                 e.Cancel = true;
                 Hide();
             }
-            }
+        }
 
         private void listBox2_DoubleClick(object sender, EventArgs e)
         {
-           var alert= listBox2.SelectedItem as MessageAlert;
-           if (alert != null)
+            var alert = listBox2.SelectedItem as MessageAlert;
+            if (alert != null)
             {
-
                 var tran = Transalte(alert.Data);
-              MessageBox.Show(alert.DateItem+"=>"+tran )  ;
+                MessageBox.Show(alert.DateItem + "=>" + tran);
             }
         }
-
-       
 
         private void toolFilter_Click(object sender, EventArgs e)
         {
-            AddFilters filters = new AddFilters(_locations,_keywords);
-            if (filters.ShowDialog() == DialogResult.OK){
-              _keywords = filters.Search.ToArray();
-              var search = string.Join(",", _keywords); ;
-           //   lblFilter.Text = search;
-              toolStripStatusLabel2.Text = search;
+            AddFilters filters = new AddFilters(_locations, _keywords);
+            if (filters.ShowDialog() == DialogResult.OK)
+            {
+                _keywords = filters.Search.ToArray();
+                toolStripStatusLabel2.Text = string.Join(",", _keywords);
+                var toJsonType = SerializeObject.JsonSerializeObject(_keywords);
+                File.WriteAllText(_filterPath, toJsonType);
             }
-
-            
         }
 
-       
-      
+        private void stopHazaka_Click(object sender, EventArgs e)
+        {
+            if (_azahakaSound != null)
+                _azahakaSound.Stop();
+        }
     }
 }

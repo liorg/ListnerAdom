@@ -18,6 +18,7 @@ namespace rssYnet
             Application.SetCompatibleTextRenderingDefault(false);
          // Application.Run(new AddFilters());
            Application.Run(new OrefAlert());
+          // Application.Run(new UTest());
         } 
     }
 }
