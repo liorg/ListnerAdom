@@ -40,7 +40,7 @@ namespace rssYnet
         {
             lock (o)
             {
-                listBox1.Items.Insert(0, obj);
+                listBox2.Items.Insert(0, obj);
                 notifyIcon1.BalloonTipText = Transalte(obj.Data);
                 notifyIcon1.BalloonTipTitle = "אזעקת צבע אדום" + "[" + obj.DateItem.ToString() + "]";
                 if (obj.IsSearch)
@@ -102,7 +102,8 @@ namespace rssYnet
             {
                 
                 _alert.Play(_interval,_keywords);
-                listBox1.Items.Clear();
+                if(listBox2.Items!=null)
+                    listBox2.Items.Clear();
                 btnExcute.Text = "עצור"; 
                 toolStripExcute.Text = "עצור";
                 isPlay = false;
@@ -211,9 +212,9 @@ namespace rssYnet
             }
             }
 
-        private void listBox1_DoubleClick(object sender, EventArgs e)
+        private void listBox2_DoubleClick(object sender, EventArgs e)
         {
-           var alert= listBox1.SelectedItem as MessageAlert;
+           var alert= listBox2.SelectedItem as MessageAlert;
            if (alert != null)
             {
 
@@ -222,10 +223,7 @@ namespace rssYnet
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void toolFilter_Click(object sender, EventArgs e)
         {
