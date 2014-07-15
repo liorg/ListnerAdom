@@ -69,9 +69,8 @@ namespace rssYnet
                         sb.AppendLine(j);
                     }
                     else
-                    {
-                        sb.AppendLine(item);
-                    }
+                       sb.AppendLine(item);
+                    
                 }
                 catch 
                 {
@@ -210,6 +209,17 @@ namespace rssYnet
             }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+           var alert= listBox1.SelectedItem as MessageAlert;
+           if (alert != null)
+            {
+
+                var tran = Transalte(alert.Data);
+              MessageBox.Show(alert.DateItem+"=>"+tran )  ;
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

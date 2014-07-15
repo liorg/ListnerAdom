@@ -103,6 +103,10 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Text files (*.json)|";
+            // 
             // AddFilters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
