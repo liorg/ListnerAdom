@@ -18,6 +18,8 @@ namespace rssYnet.Util
     {
         public string Id { get; set; }
        public string VerticalMessage { get; set; }
+
+       public string[] Data { get; set; }
         //public DateTime DateItem { get; set; }
         //public bool IsSearch { get; set; }
         //public int Index { get; set; }

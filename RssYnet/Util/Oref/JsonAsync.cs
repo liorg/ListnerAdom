@@ -69,7 +69,6 @@ namespace rssYnet.Util
                             var serializer = new DataContractJsonSerializer(typeof(OrefModel));
                             oref = (OrefModel)serializer.ReadObject(ms);
                         }
-
                     }
                 }
                 catch (TaskCanceledException ex)
@@ -85,7 +84,7 @@ namespace rssYnet.Util
             }
             if (oref != null && oref.data != null && oref.data.Length > 0 && !_Items.Where(d => d.Id.GetHashCode() == oref.id.GetHashCode()).Any())
             {
-                var message = new MessageAlert { Id = oref.id, Index = _rowid, IsSearch = false, Title = oref.Fields, VerticalMessage = oref.VerticalFields, DateItem = DateTime.Now };
+                var message = new MessageAlert { Id = oref.id, Index = _rowid, IsSearch = false, Title = oref.Fields,      Data = oref.data, DateItem = DateTime.Now };
                 _Items.Add(message);
                 _rowid++;
                 if (Listner != null)

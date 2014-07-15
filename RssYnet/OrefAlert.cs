@@ -14,7 +14,9 @@ namespace rssYnet
     public partial class OrefAlert : Form
     {
         static object o = new object();
-        bool isPlay = false; 
+        Locations _locations;
+        bool isPlay = false;
+        string _subPath = @"resources\data.json";
         string _searchKey;
         int _interval;
         JsonAsync _alert; 
@@ -41,7 +43,9 @@ namespace rssYnet
                 listBox1.Items.Insert(0, obj);
                // if (obj.IsSearch)
                // {
-                    notifyIcon1.BalloonTipText = obj.VerticalMessage;
+
+
+                notifyIcon1.BalloonTipText = Transalte(obj.Data);
                     notifyIcon1.BalloonTipTitle = "אזעקת צבע אדום" + "[" + obj.DateItem.ToString() + "]";
                     notifyIcon1.ShowBalloonTip(500);
                     Console.Beep();
@@ -51,6 +55,35 @@ namespace rssYnet
             }
 
         }
+        string Transalte(string[] data)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in data)
+            {
+                try
+                {
+                    if (_locations.YeshovimLocations.ContainsKey(item))
+                    {
+                        var j = string.Join(",",_locations.YeshovimLocations[item].ToArray());
+                        sb.AppendLine(j);
+                    }
+                    else
+                    {
+                        sb.AppendLine(item);
+                    }
+                }
+                catch 
+                {
+                    sb.AppendLine(item);
+                }
+            }
+
+            return sb.ToString();
+            
+        }
+
+
         void Excute()
         {
             _alert.RssUrl = _rssUrl;
@@ -87,6 +120,10 @@ namespace rssYnet
         private void OrefAlert_Load(object sender, EventArgs e)
         {
             isPlay = true;
+            string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
+            var json = System.IO.File.ReadAllText(fullPath);
+            _locations = SerializeObject.JsonDeserializeToObject<Locations>(json);
+           
             Excute();
         }
 
@@ -171,6 +208,11 @@ namespace rssYnet
                 Hide();
             }
             }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
 
       
     }

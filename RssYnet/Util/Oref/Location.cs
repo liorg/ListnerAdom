@@ -27,6 +27,6 @@ namespace rssYnet.Util
     public class Locations
     {
         [DataMember]
-        public Dictionary<string,string[]>  YeshovimLocations { get; set; }
+        public Dictionary<string,List<string>>  YeshovimLocations { get; set; }
     }
 }

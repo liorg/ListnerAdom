@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,30 +28,30 @@ namespace rssYnet
         private void button1_Click(object sender, EventArgs e)
         {
             Locations locations = new Locations();
-            locations.YeshovimLocations = new Dictionary<string, string[]>();
-            locations.YeshovimLocations.Add("עוטף עזה 217", new string[] { "זיקים", "כרמיה" });
-            locations.YeshovimLocations.Add("עוטף עזה 218", new string[] { "נתיב העשרה", "יד מרדכי" });
-            locations.YeshovimLocations.Add("עוטף עזה 231", new string[] { "נירים", "עין השלושה" });
+            locations.YeshovimLocations = new Dictionary<string, List<string>>();
+            using (var reader = new StreamReader(@"F:\temp\pp.csv",Encoding.UTF8))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+                    if (values.Any())
+                    {
+                        var key =values[2];
+                        var value = values[0];
+                        if (!String.IsNullOrEmpty(key))
+                        {
+                            if (!locations.YeshovimLocations.ContainsKey(key))
+                            {
+                                locations.YeshovimLocations.Add(key, new List<string>());
+                            }
+                            var data = locations.YeshovimLocations[key];
+                            data.Add(value);
+                        }
+                    }
+                }
+            }
 
-            locations.YeshovimLocations.Add("נגב 296", new string[] { "א נבאר", 
-                "סייד" ,"עטאונה" ,"אעצם" ,"חורה" ,
-                "כרמים" ,"כרמית" ,"מולדה" ,"מיתר" ,
-                "סנסנה" ,"עוקבי"             
-            });
-            locations.YeshovimLocations.Add("נגב 297", new string[] { "אבו קוידר", "אבו תלול", "אל חמידי", "אל עת'אמין", "ביר אבו אל חמאם", "נבטים", "שגב שלום" });
-            locations.YeshovimLocations.Add("באר שבע 292", new string[] { "מסעודין אל עזאזמה", "באר שבע" });
-            locations.YeshovimLocations.Add("קו העימות 14", new string[] { "◦אזור תעשייה אכזיב מילואות", "בצת", "כפר ראש הנקרה", "לימן", "מצובה", "שלומי" });
-            locations.YeshovimLocations.Add("אשקלון 234", new string[] { "אוהד", "צוחר", "שדה ניצן", "תלמי אליהו" });
-            locations.YeshovimLocations.Add("עוטף עזה 234", new string[] { "ישע", "מבטחים", "עמיעוז" });
-            locations.YeshovimLocations.Add("עוטף עזה 223", new string[] { "כפר עזה", "סעד" });
-            locations.YeshovimLocations.Add("עוטף עזה 225", new string[] { "זמרת", "חוות יזרעם", "כפר מימון", "שובה", "שוקדה", "תושיה" });
-            locations.YeshovimLocations.Add("עוטף עזה 232", new string[] { "ניר עוז" });
-            locations.YeshovimLocations.Add("עוטף עזה 237", new string[] { "כרם שלום" });
-
-
-            //locations.YeshovimLocations.Add("אשקלון 234", new string[] { "תלמי אליהו", "שדה ניצן", "צוחר", "אוהד" });
-          
-            // locations.YeshovimLocations.Add("", new string[] { "x", "x" });
             var json = SerializeObject.JsonSerializeObject(locations);
 
             string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
@@ -65,7 +66,7 @@ namespace rssYnet
             string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
             var json = System.IO.File.ReadAllText(fullPath);
             _locations = SerializeObject.JsonDeserializeToObject<Locations>(json);
-            cboCodes.DataSource = _locations.YeshovimLocations.Keys.ToList();
+            cboCodes.DataSource = _locations.YeshovimLocations.Keys.OrderBy(k=>k).ToList();
         }
 
         private void cboCodes_SelectedIndexChanged(object sender, EventArgs e)
