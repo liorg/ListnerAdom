@@ -26,6 +26,12 @@ namespace rssYnet
 
             _alert = new JsonAsync(_rssUrl);
             _alert.Listner += Alert_Listner;
+            _alert.Log += Alert_Log;
+        }
+
+        void Alert_Log(string obj)
+        {
+            lstLog.Items.Insert(0, DateTime.Now.ToString() +obj);
         }
 
         void Alert_Listner(MessageAlert obj)

@@ -37,15 +37,19 @@ namespace rssYnet
                 "כרמים" ,"כרמית" ,"מולדה" ,"מיתר" ,
                 "סנסנה" ,"עוקבי"             
             });
-            locations.YeshovimLocations.Add("נגב 297", new string[] {  "אבו קוידר", "אבו תלול","אל חמידי", "אל עת'אמין","ביר אבו אל חמאם", "נבטים","שגב שלום"});
+            locations.YeshovimLocations.Add("נגב 297", new string[] { "אבו קוידר", "אבו תלול", "אל חמידי", "אל עת'אמין", "ביר אבו אל חמאם", "נבטים", "שגב שלום" });
             locations.YeshovimLocations.Add("באר שבע 292", new string[] { "מסעודין אל עזאזמה", "באר שבע" });
-            locations.YeshovimLocations.Add("קו העימות 14", new string[] {  "◦אזור תעשייה אכזיב מילואות", "בצת","כפר ראש הנקרה", "לימן", "מצובה","שלומי"});
+            locations.YeshovimLocations.Add("קו העימות 14", new string[] { "◦אזור תעשייה אכזיב מילואות", "בצת", "כפר ראש הנקרה", "לימן", "מצובה", "שלומי" });
             locations.YeshovimLocations.Add("אשקלון 234", new string[] { "אוהד", "צוחר", "שדה ניצן", "תלמי אליהו" });
             locations.YeshovimLocations.Add("עוטף עזה 234", new string[] { "ישע", "מבטחים", "עמיעוז" });
             locations.YeshovimLocations.Add("עוטף עזה 223", new string[] { "כפר עזה", "סעד" });
-            locations.YeshovimLocations.Add("עוטף עזה 225", new string[] { "זמרת", "חוות יזרעם", "כפר מימון",    "שובה", "שוקדה", "תושיה" });
+            locations.YeshovimLocations.Add("עוטף עזה 225", new string[] { "זמרת", "חוות יזרעם", "כפר מימון", "שובה", "שוקדה", "תושיה" });
+            locations.YeshovimLocations.Add("עוטף עזה 223", new string[] { "ניר עוז" });
+
+            locations.YeshovimLocations.Add("אשקלון 234", new string[] { "תלמי אליהו", "שדה ניצן", "צוחר", "אוהד" });
+            //אוהד; צוחר; שדה ניצן; תלמי אליהו;
             //עוטף עזה 232:
-         //   ניר עוז; 
+            //   ניר עוז; 
             // locations.YeshovimLocations.Add("", new string[] { "x", "x" });
             var json = SerializeObject.JsonSerializeObject(locations);
 

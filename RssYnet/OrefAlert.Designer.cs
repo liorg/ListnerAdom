@@ -33,7 +33,6 @@
             this.btnExcute = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new ImprovedListBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,11 +46,15 @@
             this.יציאהToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox1 = new ImprovedListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lstLog = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExcute
@@ -67,6 +70,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(7, 79);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -83,15 +87,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "תוצאות חיפוש";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(678, 199);
-            this.listBox1.TabIndex = 7;
             // 
             // notifyIcon1
             // 
@@ -193,6 +188,33 @@
             this.aboutToolStripMenuItem.Text = "עלינו";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 27);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(678, 199);
+            this.listBox1.TabIndex = 7;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.lstLog);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(690, 210);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "לוג שגיאות";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lstLog
+            // 
+            this.lstLog.FormattingEnabled = true;
+            this.lstLog.Location = new System.Drawing.Point(4, 4);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(680, 199);
+            this.lstLog.TabIndex = 0;
+            // 
             // OrefAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +263,7 @@
         private System.Windows.Forms.ToolStripMenuItem יציאהToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox lstLog;
     }
 }
