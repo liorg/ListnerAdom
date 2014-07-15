@@ -44,12 +44,12 @@ namespace rssYnet
             locations.YeshovimLocations.Add("עוטף עזה 234", new string[] { "ישע", "מבטחים", "עמיעוז" });
             locations.YeshovimLocations.Add("עוטף עזה 223", new string[] { "כפר עזה", "סעד" });
             locations.YeshovimLocations.Add("עוטף עזה 225", new string[] { "זמרת", "חוות יזרעם", "כפר מימון", "שובה", "שוקדה", "תושיה" });
-            locations.YeshovimLocations.Add("עוטף עזה 223", new string[] { "ניר עוז" });
+            locations.YeshovimLocations.Add("עוטף עזה 232", new string[] { "ניר עוז" });
+            locations.YeshovimLocations.Add("עוטף עזה 237", new string[] { "כרם שלום" });
 
-            locations.YeshovimLocations.Add("אשקלון 234", new string[] { "תלמי אליהו", "שדה ניצן", "צוחר", "אוהד" });
-            //אוהד; צוחר; שדה ניצן; תלמי אליהו;
-            //עוטף עזה 232:
-            //   ניר עוז; 
+
+            //locations.YeshovimLocations.Add("אשקלון 234", new string[] { "תלמי אליהו", "שדה ניצן", "צוחר", "אוהד" });
+          
             // locations.YeshovimLocations.Add("", new string[] { "x", "x" });
             var json = SerializeObject.JsonSerializeObject(locations);
 
