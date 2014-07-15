@@ -18,7 +18,7 @@ namespace rssYnet
             {
                 List<string> l = new List<string>();
 
-                foreach (var item in lstItems.Items)
+                foreach (var item in lstItems.Items) 
                 {
                     l.Add(item.ToString());
                 }
