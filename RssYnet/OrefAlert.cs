@@ -17,14 +17,14 @@ namespace rssYnet
         Locations _locations;
         bool isPlay = false;
         string _subPath = @"resources\data.json";
-        string _searchKey;
+        string[] _keywords;
         int _interval;
         JsonAsync _alert; 
         string _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
         public OrefAlert()
         {
             InitializeComponent();
-            _interval = 2; _searchKey = "";
+            _interval = 2; 
 
             _alert = new JsonAsync(_rssUrl);
             _alert.Listner += Alert_Listner;
@@ -41,23 +41,27 @@ namespace rssYnet
             lock (o)
             {
                 listBox1.Items.Insert(0, obj);
-               // if (obj.IsSearch)
-               // {
-
-
                 notifyIcon1.BalloonTipText = Transalte(obj.Data);
-                    notifyIcon1.BalloonTipTitle = "אזעקת צבע אדום" + "[" + obj.DateItem.ToString() + "]";
+                notifyIcon1.BalloonTipTitle = "אזעקת צבע אדום" + "[" + obj.DateItem.ToString() + "]";
+                if (obj.IsSearch)
+                {
+
+                    notifyIcon1.ShowBalloonTip(3000);
+                     Console.Beep();
+                     Console.Beep(); Console.Beep(); Console.Beep(); Console.Beep();
+                }
+                else
+                {
                     notifyIcon1.ShowBalloonTip(500);
                     Console.Beep();
-                    Console.Beep();
-                    Console.Beep();
-               // }
+                  
+                }
             }
 
         }
+
         string Transalte(string[] data)
         {
-
             StringBuilder sb = new StringBuilder();
             foreach (var item in data)
             {
@@ -82,7 +86,6 @@ namespace rssYnet
             
         }
 
-
         void Excute()
         {
             _alert.RssUrl = _rssUrl;
@@ -92,25 +95,22 @@ namespace rssYnet
                 isPlay = true;
                 btnExcute.Text = "הפעל";
                 toolStripExcute.Text = "הפעל";
-                //searchToolStripMenuItem.Enabled = true;
-                configurationToolStripMenuItem.Enabled = true;
+                toolFilter.Enabled = true;
+                configurationToolStripMenuItem.Enabled = true; toolStripStatusLabel1.Text = "לא מאזין";
             }
             else
             {
-                //if (_searchKey == null || !_searchKey.Any())
-                //{
-                //    MessageBox.Show("יש לבחור חיפוש");
-                //    return;
-                //}
-                _alert.Play(_interval, _searchKey);
+                
+                _alert.Play(_interval,_keywords);
                 listBox1.Items.Clear();
                 btnExcute.Text = "עצור"; 
                 toolStripExcute.Text = "עצור";
                 isPlay = false;
-               // searchToolStripMenuItem.Enabled = false;
+                toolFilter.Enabled = false; toolStripStatusLabel1.Text = " מאזין";
                configurationToolStripMenuItem.Enabled = false;
             }
         }
+
         private void btnExcute_Click(object sender, EventArgs e)
         {
             Excute();
@@ -118,6 +118,9 @@ namespace rssYnet
 
         private void OrefAlert_Load(object sender, EventArgs e)
         {
+           
+            toolStripStatusLabel1.Text = "";
+            toolStripStatusLabel2.Text = "";
             isPlay = true;
             string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPath);
             var json = System.IO.File.ReadAllText(fullPath);
@@ -224,6 +227,20 @@ namespace rssYnet
 
         }
 
+        private void toolFilter_Click(object sender, EventArgs e)
+        {
+            AddFilters filters = new AddFilters(_locations,_keywords);
+            if (filters.ShowDialog() == DialogResult.OK){
+              _keywords = filters.Search.ToArray();
+              var search = string.Join(",", _keywords); ;
+              lblFilter.Text = search;
+              toolStripStatusLabel2.Text = search;
+            }
+
+            
+        }
+
+       
       
     }
 }

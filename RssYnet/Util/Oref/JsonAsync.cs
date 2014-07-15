@@ -18,9 +18,10 @@ namespace rssYnet.Util
         int _rowid = 0;
         Collection<MessageAlert> _Items = new Collection<MessageAlert>();
         System.Windows.Forms.Timer _timer;
-
         public event Action<MessageAlert> Listner = null;
         public event Action<string> Log = null;
+        string[] _keywords;
+
         public Collection<MessageAlert> Items
         {
             get { return _Items; }
@@ -46,7 +47,7 @@ namespace rssYnet.Util
             _timer.Interval = 1000;
         }
 
-        async void Timer_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
             Excute();
         }
@@ -84,14 +85,18 @@ namespace rssYnet.Util
             }
             if (oref != null && oref.data != null && oref.data.Length > 0 && !_Items.Where(d => d.Id.GetHashCode() == oref.id.GetHashCode()).Any())
             {
-                var message = new MessageAlert { Id = oref.id, Index = _rowid, IsSearch = false, Title = oref.Fields,      Data = oref.data, DateItem = DateTime.Now };
+                var message = new MessageAlert { Id = oref.id, Index = _rowid, Title = oref.Fields, Data = oref.data, DateItem = DateTime.Now };
+                if (_keywords != null && _keywords.Any())
+                {
+                    foreach (var key in _keywords)
+                       message.IsSearch = oref.data.Where(d => d.Trim().GetHashCode() == key.GetHashCode()).Any();
+                    
+                }
                 _Items.Add(message);
                 _rowid++;
                 if (Listner != null)
                     Listner(message);
             }
-
-
         }
 
         internal void Stop()
@@ -100,8 +105,9 @@ namespace rssYnet.Util
             _rowid = 0;
         }
 
-        internal void Play(int interval, string searchKey)
+        internal void Play(int interval, string[] keywords = null)
         {
+            _keywords = keywords;
             _timer.Interval = interval * 1000;
             _timer.Enabled = true;
             _rowid = 0;
