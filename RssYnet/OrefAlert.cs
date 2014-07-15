@@ -233,7 +233,7 @@ namespace rssYnet
             if (filters.ShowDialog() == DialogResult.OK){
               _keywords = filters.Search.ToArray();
               var search = string.Join(",", _keywords); ;
-              lblFilter.Text = search;
+           //   lblFilter.Text = search;
               toolStripStatusLabel2.Text = search;
             }
 
