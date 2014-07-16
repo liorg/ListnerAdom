@@ -42,6 +42,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripExcute = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.stopHazaka = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolFilter = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +56,6 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnExcute = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.stopHazaka = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -145,8 +145,9 @@
             this.menuStrip1.Size = new System.Drawing.Size(707, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
-            
-
+            // 
+            // fileToolStripMenuItem
+            // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripExcute,
             this.toolStripSeparator1,
@@ -172,6 +173,18 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            // 
+            // stopHazaka
+            // 
+            this.stopHazaka.Name = "stopHazaka";
+            this.stopHazaka.Size = new System.Drawing.Size(167, 22);
+            this.stopHazaka.Text = "הפסק צליל";
+            this.stopHazaka.Click += new System.EventHandler(this.stopHazaka_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
             // 
             // configurationToolStripMenuItem
             // 
@@ -263,18 +276,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "צבע אדום ";
             // 
-            // stopHazaka
-            // 
-            this.stopHazaka.Name = "stopHazaka";
-            this.stopHazaka.Size = new System.Drawing.Size(167, 22);
-            this.stopHazaka.Text = "הפסק צליל";
-            this.stopHazaka.Click += new System.EventHandler(this.stopHazaka_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(164, 6);
-            // 
             // OrefAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +288,7 @@
             this.Controls.Add(this.btnExcute);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "OrefAlert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "עורף הודעות צבע אדום";
