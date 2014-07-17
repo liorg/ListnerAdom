@@ -215,7 +215,7 @@
             this.יציאהToolStripMenuItem.Name = "יציאהToolStripMenuItem";
             this.יציאהToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.יציאהToolStripMenuItem.Text = "יציאה";
-            this.יציאהToolStripMenuItem.Click += new System.EventHandler(this.יציאהToolStripMenuItem_Click);
+            this.יציאהToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // hELPToolStripMenuItem
             // 

@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,12 +23,18 @@ namespace rssYnet
         string _subPath = @"resources\data.json";
         string _subPathWav = @"resources\ding.wav";
         string _subPathFilter = @"resources\filterTemp.json";
+        Task _taskPlayAsync;
+        const int _timeLoopPlayer = 20;
 
         string[] _keywords;
         int _interval;
         JsonAsync _alert;
         string _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
         string _filterPath;
+
+        string _fullPathWave;
+     
+
         public OrefAlert()
         {
             InitializeComponent();
@@ -46,8 +53,7 @@ namespace rssYnet
         {
             lstLog.Items.Insert(0, DateTime.Now.ToString() + obj);
         }
-        string _fullPathWave;
-
+      
         void Alert_Listner(MessageAlert obj)
         {
             lock (o)
@@ -60,11 +66,20 @@ namespace rssYnet
 
                     notifyIcon1.ShowBalloonTip(3000);
                     Console.Beep();
-                    if (_azahakaSound == null)
-                        _azahakaSound = new SoundPlayer(_fullPathWave);
+                    //if (_azahakaSound == null)
+                    //    _azahakaSound = new SoundPlayer(_fullPathWave);
                     Console.Beep();
-                    _azahakaSound.PlayLooping();
-                    // Console.Beep(); Console.Beep(); Console.Beep(); Console.Beep();
+
+                    if (!((_taskPlayAsync != null) && (_taskPlayAsync.IsCompleted == false ||
+                                   _taskPlayAsync.Status == TaskStatus.Running ||
+                                   _taskPlayAsync.Status == TaskStatus.WaitingToRun ||
+                                   _taskPlayAsync.Status == TaskStatus.WaitingForActivation)))
+                    {
+
+                        _taskPlayAsync = Task.Factory.StartNew(() => PlaySound(_timeLoopPlayer));
+                    }
+                  //  _azahakaSound.Play();
+                   //  _azahakaSound.PlayLooping();
                 }
                 else
                 {
@@ -77,10 +92,11 @@ namespace rssYnet
         string Transalte(string[] data)
         {
             StringBuilder sb = new StringBuilder();
-            foreach (var item in data)
+            foreach (var itemOref in data)
             {
                 try
                 {
+                    var item = itemOref.Trim();
                     if (_locations.YeshovimLocations.ContainsKey(item))
                     {
                         var j = string.Join(",", _locations.YeshovimLocations[item].ToArray());
@@ -92,7 +108,7 @@ namespace rssYnet
                 }
                 catch
                 {
-                    sb.AppendLine(item);
+                    sb.AppendLine(itemOref);
                 }
             }
 
@@ -194,8 +210,7 @@ namespace rssYnet
             Excute();
         }
 
-
-        private void יציאהToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -251,6 +266,32 @@ namespace rssYnet
         {
             if (_azahakaSound != null)
                 _azahakaSound.Stop();
+        }
+
+        private void PlaySound(int n)
+        {
+            try
+            {
+
+                if (_azahakaSound == null)
+                  _azahakaSound = new SoundPlayer(_fullPathWave);
+                
+
+                for (; n > 0; n--)
+                {
+                    //if(ct.IsCancellationRequested)
+                    //    return;
+                    // ct.ThrowIfCancellationRequested();
+                    _azahakaSound.Play();
+                    Thread.Sleep(1000);
+                }
+            }
+            catch
+            {
+
+            }
+            Thread.Sleep(1000);
+
         }
     }
 }
