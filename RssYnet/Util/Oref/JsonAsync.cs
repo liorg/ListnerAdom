@@ -89,8 +89,12 @@ namespace rssYnet.Util
                 if (_keywords != null && _keywords.Any())
                 {
                     foreach (var key in _keywords)
-                       message.IsSearch = oref.data.Where(d => d.Trim().GetHashCode() == key.GetHashCode()).Any();
-                    
+                    {
+                        var isSearch = oref.data.Where(d => d.Trim().GetHashCode() == key.GetHashCode()).Any();
+                        message.IsSearch =isSearch;
+                        if(isSearch)
+                            break;
+                    }
                 }
                 _Items.Add(message);
                 _rowid++;

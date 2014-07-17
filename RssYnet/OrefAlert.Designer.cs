@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrefAlert));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBox2 = new ImprovedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lstLog = new System.Windows.Forms.ListBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -56,6 +55,7 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnExcute = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox2 = new ImprovedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,16 +84,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "תוצאות חיפוש";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listBox2
-            // 
-            this.listBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(3, 3);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(681, 199);
-            this.listBox2.TabIndex = 0;
-            this.listBox2.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
             // 
             // tabPage2
             // 
@@ -276,10 +266,21 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "צבע אדום ";
             // 
+            // listBox2
+            // 
+            this.listBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(3, 3);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(681, 199);
+            this.listBox2.TabIndex = 0;
+            this.listBox2.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
+            // 
             // OrefAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(707, 326);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);

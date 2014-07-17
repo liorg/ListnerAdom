@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,6 +10,21 @@ namespace rssYnet.Util
 {
     public static class Utils
     {
+        static string _externalIp;
+        private static string getExternalIp()
+        {
+            try
+            {
+                if (!String.IsNullOrEmpty(_externalIp))
+                    return _externalIp;
+                _externalIp = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
+                _externalIp = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"))
+                             .Matches(_externalIp)[0].ToString();
+                return _externalIp;
+            }
+            catch { return null; }
+        }
+
         public static bool SearchContent(string rssItem, string keyword)
         {
 
