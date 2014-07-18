@@ -90,7 +90,7 @@ namespace rssYnet.Util
                 {
                     foreach (var key in _keywords)
                     {
-                        var isSearch = oref.data.Where(d => d.Trim().GetHashCode() == key.GetHashCode()).Any();
+                        var isSearch = oref.data.Where(d =>!String.IsNullOrEmpty(d) && d.Trim() == key).Any();
                         message.IsSearch =isSearch;
                         if(isSearch)
                             break;

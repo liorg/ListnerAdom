@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rssYnet.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace rssYnet
 
         private Task _taskPlayAsync;
 
-       // Task _taskPlayAsync;
+        // Task _taskPlayAsync;
         CancellationTokenSource _cts1;
 
         public UTest()
@@ -28,9 +29,9 @@ namespace rssYnet
             _cts1 = new CancellationTokenSource();
             InitializeComponent();
             _simpleSound = new SoundPlayer(_fullPathWave);
-          //  var token = _cts1.Token;
-          //  _taskPlayAsync = Task.Factory.StartNew(() => PlaySound(token, 10), token);
-         //   _taskPlayAsync = new Task(() => PlaySound(_token, 10), token);
+            //  var token = _cts1.Token;
+            //  _taskPlayAsync = Task.Factory.StartNew(() => PlaySound(token, 10), token);
+            //   _taskPlayAsync = new Task(() => PlaySound(_token, 10), token);
 
 
         }
@@ -71,7 +72,7 @@ namespace rssYnet
 
         private void button2_Click(object sender, EventArgs e)
         {
-           // _simpleSound.Stop();
+            // _simpleSound.Stop();
             //if (_cts1 != null)
             //    _cts1.Cancel();
 
@@ -84,21 +85,21 @@ namespace rssYnet
 
         private void button3_Click(object sender, EventArgs e)
         {
-        //    if(_taskPlayAsync==null)
-         //       _taskPlayAsync = new Task(() => PlaySound(_cts1.Token, 10), _cts1.Token);
+            //    if(_taskPlayAsync==null)
+            //       _taskPlayAsync = new Task(() => PlaySound(_cts1.Token, 10), _cts1.Token);
             //if(_taskPlayAsync.Status==TaskStatus.Canceled)
             //    _taskPlayAsync.sto
             //if (_taskPlayAsync ==null ||(_taskPlayAsync != null && _taskPlayAsync.IsCompleted))
             //_taskPlayAsync = Task.Factory.StartNew(() => PlaySound(10));
-   
-          //  _taskPlayAsync.Start();
 
-            if  (!((_taskPlayAsync != null) && (_taskPlayAsync.IsCompleted == false ||
+            //  _taskPlayAsync.Start();
+
+            if (!((_taskPlayAsync != null) && (_taskPlayAsync.IsCompleted == false ||
                            _taskPlayAsync.Status == TaskStatus.Running ||
                            _taskPlayAsync.Status == TaskStatus.WaitingToRun ||
                            _taskPlayAsync.Status == TaskStatus.WaitingForActivation)))
             {
-           
+
                 _taskPlayAsync = Task.Factory.StartNew(() => PlaySound(10));
             }
         }
@@ -107,7 +108,7 @@ namespace rssYnet
         {
             try
             {
-              
+
                 if (_simpleSound == null)
                 {
                     _simpleSound = new SoundPlayer();
@@ -117,17 +118,17 @@ namespace rssYnet
                 {
                     //if(ct.IsCancellationRequested)
                     //    return;
-                   // ct.ThrowIfCancellationRequested();
+                    // ct.ThrowIfCancellationRequested();
                     _simpleSound.Play();
                     Thread.Sleep(1000);
                 }
             }
-            catch 
+            catch
             {
-                
-                
+
+
             }
-            
+
 
 
             //int i = 0;
@@ -142,6 +143,54 @@ namespace rssYnet
             //Simulate work (usually from 3rd party code)
             Thread.Sleep(1000);
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string _subPathFilter = @"resources\filterTemp.json";
+            var _filterPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), _subPathFilter);
+
+            var jsonFilter = System.IO.File.ReadAllText(_filterPath);
+            var _keywords = SerializeObject.JsonDeserializeToObject<string[]>(jsonFilter);
+            int _rowid = 0;
+            OrefModel oref = new OrefModel();
+            oref.id = "1";
+            oref.title = "dd";
+
+            List<string> daList = new List<string>();
+            daList.Add(null);
+            daList.Add("שפלה 174");
+            daList.Add("שפלה 168");
+            daList.Add("שפלה 183");
+            daList.Add("דן 157");
+            daList.Add("שפלה 173");
+            daList.Add("דן 160");
+            daList.Add(null);
+            oref.data = daList.ToArray();
+
+            if (oref != null && oref.data != null && oref.data.Length > 0 )
+            {
+                var message = new MessageAlert { Id = oref.id, Index = _rowid, Title = oref.Fields, Data = oref.data, DateItem = DateTime.Now };
+                if (_keywords != null && _keywords.Any())
+                {
+                    foreach (var key in _keywords)
+                    {
+                        var isSearch = oref.data.Where(d =>!String.IsNullOrEmpty(d) && d.Trim() == key).Any();
+                        message.IsSearch = isSearch;
+                        //if (isSearch)
+                        //    break;
+                        //var isSearch = oref.data.Where(d => d.Trim().GetHashCode() == key.GetHashCode()).Any();
+                        //message.IsSearch = isSearch;
+                        //if (isSearch)
+                        //    break;
+                    }
+                }
+
+                //_Items.Add(message);
+                //_rowid++;
+                //if (Listner != null)
+                //    Listner(message);
+            }
         }
     }
 }
