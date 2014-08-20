@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-
+using rssYnet.Util.exstention;
 namespace rssYnet.Util
 {
     public class JsonAsync
@@ -90,7 +90,8 @@ namespace rssYnet.Util
                 {
                     foreach (var key in _keywords)
                     {
-                        var isSearch = oref.data.Where(d =>!String.IsNullOrEmpty(d) && d.Trim() == key).Any();
+                        var k = key.RemoveMer();
+                        var isSearch = oref.data.Where(d =>!String.IsNullOrEmpty(d) && ((d.Trim() == k) ) ).Any();
                         message.IsSearch =isSearch;
                         if(isSearch)
                             break;
