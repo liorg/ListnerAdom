@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRss = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.chkBeep = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnOk
@@ -108,11 +109,22 @@
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // chkBeep
+            // 
+            this.chkBeep.AutoSize = true;
+            this.chkBeep.Location = new System.Drawing.Point(98, 50);
+            this.chkBeep.Name = "chkBeep";
+            this.chkBeep.Size = new System.Drawing.Size(154, 17);
+            this.chkBeep.TabIndex = 6;
+            this.chkBeep.Text = "התראה ביפ על כל אזעקה";
+            this.chkBeep.UseVisualStyleBackColor = true;
+            // 
             // Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 181);
+            this.Controls.Add(this.chkBeep);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRss;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox chkBeep;
     }
 }

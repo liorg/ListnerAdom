@@ -12,15 +12,27 @@ namespace rssYnet
 {
     public partial class Config : Form
     {
-        public Config(int interval ,string rss)
+        public Config(int interval ,string rss,bool isBeep)
         {
             InitializeComponent();
             ddInterval.Text = interval.ToString();
             txtRss.Text = rss;
             comboBox1.SelectedValue = rss;
             comboBox1.Text = rss;
+            chkBeep.Checked = isBeep;
         }
+        public bool iSbeep
+        {
 
+
+            get
+            {
+
+                return chkBeep.Checked;
+            }
+
+
+        }
         public int Interval {
 
 
