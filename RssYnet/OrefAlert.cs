@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using rssYnet.Util.exstention;
 namespace rssYnet
 {
     public partial class OrefAlert : Form
@@ -23,6 +23,7 @@ namespace rssYnet
         string _subPath = @"resources\data.json";
         string _subPathWav = @"resources\ding.wav";
         string _subPathFilter = @"resources\filterTemp.json";
+        string _subPathSetting = @"resources\Setting.json";
         Task _taskPlayAsync;
         const int _timeLoopPlayer = 20;
 
@@ -31,7 +32,7 @@ namespace rssYnet
         JsonAsync _alert;
         string _rssUrl = "http://www.oref.org.il/WarningMessages/alerts.json";
         string _filterPath;
-
+        bool _isBeep;
         string _fullPathWave;
      
 
@@ -78,13 +79,15 @@ namespace rssYnet
 
                         _taskPlayAsync = Task.Factory.StartNew(() => PlaySound(_timeLoopPlayer));
                     }
+                  
                   //  _azahakaSound.Play();
                    //  _azahakaSound.PlayLooping();
                 }
                 else
                 {
                     notifyIcon1.ShowBalloonTip(500);
-                    Console.Beep();
+                    if (_isBeep)  
+                        Console.Beep();
                 }
             }
         }
@@ -96,14 +99,18 @@ namespace rssYnet
             {
                 try
                 {
-                    var item = itemOref.Trim();
-                    if (_locations.YeshovimLocations.ContainsKey(item))
+                    //var itemMer ="מרחב "+ item;
+                    var itemMer = itemOref.RemoveMer();
+                    //if (_locations.YeshovimLocations.ContainsKey(item) || _locations.YeshovimLocations.ContainsKey(itemMer))
+                    if (_locations.YeshovimLocations.ContainsKey(itemMer))
+                   // if(_locations.YeshovimLocations.Keys.Where(k=>k.LastIndexOf(item)).Count>0)
                     {
-                        var j = string.Join(",", _locations.YeshovimLocations[item].ToArray());
+                        var j = string.Join(",", _locations.YeshovimLocations[itemMer].ToArray());
+
                         sb.AppendLine(j);
                     }
                     else
-                        sb.AppendLine(item);
+                        sb.AppendLine(itemMer);
 
                 }
                 catch
@@ -223,11 +230,12 @@ namespace rssYnet
 
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OrefConfig conf = new OrefConfig(_interval, _rssUrl);
+            OrefConfig conf = new OrefConfig(_interval, _rssUrl,_isBeep);
             if (conf.ShowDialog() == DialogResult.OK)
             {
                 _rssUrl = conf.RssFeed;
                 _interval = conf.Interval;
+                _isBeep = conf.iSbeep;
             }
         }
 
