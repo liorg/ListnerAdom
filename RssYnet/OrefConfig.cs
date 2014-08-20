@@ -12,13 +12,24 @@ namespace rssYnet
 {
     public partial class OrefConfig : Form
     {
-        public OrefConfig(int interval, string rss)
+        public OrefConfig(int interval, string rss, bool isBeep)
         {
             InitializeComponent();
             numDuration.Value = interval;
-            txtRss.Text = rss;
+            txtRss.Text = rss; chkBeep.Checked = isBeep;
         }
+        public bool iSbeep
+        {
 
+
+            get
+            {
+
+                return chkBeep.Checked;
+            }
+
+
+        }
         public int Interval {
 
 
@@ -44,6 +55,7 @@ namespace rssYnet
         {
 
         }
+
 
         private void btnOk_Click(object sender, EventArgs e)
         {

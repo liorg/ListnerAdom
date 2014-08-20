@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRss = new System.Windows.Forms.TextBox();
             this.numDuration = new System.Windows.Forms.NumericUpDown();
+            this.chkBeep = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +85,22 @@
             this.numDuration.Size = new System.Drawing.Size(120, 20);
             this.numDuration.TabIndex = 5;
             // 
+            // chkBeep
+            // 
+            this.chkBeep.AutoSize = true;
+            this.chkBeep.Location = new System.Drawing.Point(30, 105);
+            this.chkBeep.Name = "chkBeep";
+            this.chkBeep.Size = new System.Drawing.Size(154, 17);
+            this.chkBeep.TabIndex = 7;
+            this.chkBeep.Text = "התראה ביפ על כל אזעקה";
+            this.chkBeep.UseVisualStyleBackColor = true;
+            // 
             // OrefConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 181);
+            this.Controls.Add(this.chkBeep);
             this.Controls.Add(this.numDuration);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -110,5 +122,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRss;
         private System.Windows.Forms.NumericUpDown numDuration;
+        private System.Windows.Forms.CheckBox chkBeep;
     }
 }
